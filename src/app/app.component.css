@@ -1,0 +1,207 @@
+* {
+    margin:0;
+    padding:0;
+}
+
+/* NAV **************************************************************************** */
+/********************************************************************************* */
+.nav-wrapper {
+    padding-right:55px;
+}
+
+.nav-wrapper a {
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 1.5em;
+}
+
+.brand-logo {
+    margin-left: 0px; 
+    margin-right: 0px;
+    /* font-family: 'Oxygen Mono', monospace; */
+    font-family: 'Kadwa', serif;
+}
+
+.global-container {
+    /* background:#ccc; */
+    width:auto;
+    padding-top:50px;
+}
+
+/* COLONNE GAUCHE ***************************************************************** */
+/********************************************************************************* */
+.global-container .colG {
+    /* background: #ddd; */
+    height:300px;
+    display: none;
+    position: relative;
+}
+
+.global-container .colG .user-btn {
+    margin:0;
+    padding:0;
+    position: fixed;
+    left:70px;
+    top:110px;
+}
+
+.global-container .colG .archives-btn {
+    margin:0;
+    padding:0;
+    position: fixed;
+    left:70px;
+    top:180px;
+}
+
+.global-container .colG .tunes-btn {
+    margin:0;
+    padding:0;
+    position: fixed;
+    left:70px;
+    top:250px;
+}
+
+.global-container .colG .contact-btn {
+    margin:0;
+    padding:0;
+    position: fixed;
+    left:70px;
+    top:320px;
+}
+
+.global-container .colG .btn-floating i {
+    font-size:2.3rem;
+}
+
+/* COLONNE CENTRALE *************************************************************** */
+/********************************************************************************* */
+.global-container .colM {
+    /* background: #0f0; */
+    /* height:300px; */
+    padding-right: 60px;
+    /* padding-left: 30px; */
+}
+
+/* COLONNE DROITE ***************************************************************** */
+/********************************************************************************* */
+.global-container .colD {
+    /* background: #00f; */
+    height:300px;
+}
+
+.global-container .colD h3 {
+    /* background: #00f; */
+    font-family: 'Kadwa', serif;
+    color:#bf360c;
+    font-size:2rem;
+    padding-bottom:15px;
+    text-align: center;
+    width:80%;
+}
+
+.global-container .colD .aside-container {
+    height: 100px;
+    width:80%;
+    background-color: #ccc;
+    margin-bottom:15px;
+}
+
+
+
+/* .tooltipped .backdrop{
+    background-color: purple;
+} */
+
+
+/* MEDIA QUERIES ****************************************************************** */
+/********************************************************************************* */
+@media (min-width: 990px) {
+    .global-container .colG {
+        display: block;
+    }
+
+    .brand-logo {
+        margin-left: 60px; 
+        /* margin-right: 40px; */
+    }
+
+}
+
+/* .ribbon {
+    width: 297px;
+    position: absolute;
+    text-align: center;
+    font-size: 17px!important;
+    background: #bf360c;
+    background: -webkit-gradient(linear, left top, left bottom, from(#bf360c), to(#bf360c));
+    background: -webkit-linear-gradient(top, #bf360c, #bf360c);
+    background: -moz-linear-gradient(top, #bf360c, #bf360c);
+    background: -ms-linear-gradient(top, #bf360c, #bf360c);
+    background: -o-linear-gradient(top, #bf360c, #bf360c);
+    background-image: -ms-linear-gradient(top, #bf360c 0%, #bf360c 100%);
+    -webkit-box-shadow: rgba(000,000,000,0.3) 0 1px 1px;
+    -moz-box-shadow: rgba(000,000,000,0.3) 0 1px 1px;
+    box-shadow: rgba(000,000,000,0.3) 0 1px 1px;
+    font-family: 'Helvetica Neue',Helvetica, sans-serif;
+    }
+ .ribbon h1 {
+    font-size: 24px!important;
+    color: #ffffff;
+    text-shadow: #5c1b07 0 1px 0;
+    margin:0px;
+    padding: 15px 10px;
+    }
+ .ribbon:before, .ribbon:after {
+    content: '';
+    position: absolute;
+    display: block;
+    bottom: -1em;
+    border: 1.5em solid #963112;
+    z-index: -1;
+    }
+ .ribbon:before {
+    left: -2em;
+    border-right-width: 1.5em;
+    border-left-color: transparent;
+    -webkit-box-shadow: rgba(000,000,000,0.4) 1px 1px 1px;
+    -moz-box-shadow: rgba(000,000,000,0.4) 1px 1px 1px;
+    box-shadow: rgba(000,000,000,0.4) 1px 1px 1px;
+    }
+ .ribbon:after {
+    right: -2em;
+    border-left-width: 1.5em;
+    border-right-color: transparent;
+    -webkit-box-shadow: rgba(000,000,000,0.4) -1px 1px 1px;
+    -moz-box-shadow: rgba(000,000,000,0.4) -1px 1px 1px;
+    box-shadow: rgba(000,000,000,0.4) -1px 1px 1px;
+    }
+ .ribbon .ribbon-content:before, .ribbon .ribbon-content:after {
+    border-color: #611e0a transparent transparent transparent;
+    position: absolute;
+    display: block;
+    border-style: solid;
+    bottom: -1em;
+    content: '';
+    }
+ .ribbon .ribbon-content:before {
+    left: 0;
+    border-width: 1em 0 0 1em;
+    }
+ .ribbon .ribbon-content:after {
+    right: 0;
+    border-width: 1em 1em 0 0;
+    }
+ .ribbon-stitches-top {
+    margin-top:2px;
+    border-top: 1px dashed rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.5);
+    -webkit-box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.5);
+    box-shadow: 0px 0px 2px rgba(255, 255, 255, 0.5);
+    }
+ .ribbon-stitches-bottom {
+    margin-bottom:2px;
+    border-top: 1px dashed rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 0px 2px rgba(255, 255, 255, 0.3);
+    } */

@@ -23,9 +23,9 @@ export class EventService {
 export class Event {
   _id: string;
   title: string;
-  admin: string;
+  admin: User;
   nbSelectas: number;
-  selectas: Array<string>;
+  selectas: Array<User>;
   nbRounds: number;
   rounds: Array<number>;
   status: string;
@@ -33,6 +33,18 @@ export class Event {
   updatedAt?: Date;
 }
 
+export class User {
+  _id: string;
+  nickname: string;
+  email: string;
+  encryptedPassword: string;
+  role: string;
+  cup: number;
+  // avatar: string;
+  events: Array<string>;
+  createdAt?: Date; // '?' makes this property optional
+  updatedAt?: Date;
+}
 
 
 

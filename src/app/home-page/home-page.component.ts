@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { EventService, Event } from '../api/event.service';
+import { EventService, Event, User } from '../api/event.service';
 declare const $: any; // declare jquery type
 
 @Component({

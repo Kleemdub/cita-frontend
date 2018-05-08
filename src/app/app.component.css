@@ -45,7 +45,7 @@
     top:110px;
 }
 
-.global-container .colG .archives-btn {
+.global-container .colG .create-btn {
     margin:0;
     padding:0;
     position: fixed;
@@ -53,7 +53,7 @@
     top:180px;
 }
 
-.global-container .colG .tunes-btn {
+.global-container .colG .archives-btn {
     margin:0;
     padding:0;
     position: fixed;
@@ -61,12 +61,20 @@
     top:250px;
 }
 
-.global-container .colG .contact-btn {
+.global-container .colG .tunes-btn {
     margin:0;
     padding:0;
     position: fixed;
     left:70px;
     top:320px;
+}
+
+.global-container .colG .contact-btn {
+    margin:0;
+    padding:0;
+    position: fixed;
+    left:70px;
+    top:390px;
 }
 
 .global-container .colG .btn-floating i {

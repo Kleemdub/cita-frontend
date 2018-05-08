@@ -2,13 +2,37 @@
   home-page works!
 </p> -->
 
-<ul>
-    <li *ngFor="let OneEvent of events">
-        <h2>{{OneEvent.title}}</h2>
-    </li>
-</ul>
+<div class="now-section">
+    <h2>
+        <i class="material-icons">star</i>
+        <i class="material-icons">star</i>
+        <i class="material-icons">star</i>
+        Now in the Arena
+        <i class="material-icons">star</i>
+        <i class="material-icons">star</i>
+        <i class="material-icons">star</i>
+    </h2>
+    <ul>
+        <li *ngFor="let OneEvent of events">
+            <div class="now-section-box">
+                <div class="now-section-header">
+                    <div class="now-section-header-inner">
+                        <h3>{{OneEvent.title}}</h3>
+                    </div>
+                </div>
+                <ul>
+                    <li *ngFor="let OneSelecta of OneEvent.selectas">
+                        <p>{{OneSelecta.nickname}}</p>
+                    </li>
+                </ul>
+            </div>
+        </li>
+    </ul>
+    <div class="ribbon ribbon-g"></div>
+    <div class="ribbon ribbon-d"></div>
+</div>
 
-<p>
+<!-- <p>
     Lorem ipsum dolor sit amet, ei possim detraxit ocurreret sit, et vis esse quando. In qui dicam iisque lobortis, adversarium deterruisset signiferumque ea nec, illum soleat dolorum at has. Ea minim oratio pri, ei usu veri molestiae urbanitas. Vim commodo lucilius forensibus et, vidisse persequeris an mel. Ut eos probo habeo admodum, ea vim eripuit oportere, pri ea quis brute constituam.
     Delenit detracto mea te. Eam ut eros hendrerit complectitur, at sed nonumy prodesset, mea eligendi prodesset contentiones an. Ea mea dicant dolores, ex has brute scripta molestie. Saperet abhorreant ei mel, ex erant referrentur sit. Eam ei viris utinam perpetua, nam ad mnesarchum persequeris.
     Id habemus albucius eam. Ex mea tota dicat mentitum. Vocent animal ius et. Vel apeirian similique no. Id quo quem dico.
@@ -28,4 +52,4 @@
     Id habemus albucius eam. Ex mea tota dicat mentitum. Vocent animal ius et. Vel apeirian similique no. Id quo quem dico.
     Ipsum alienum albucius an mel. Sea graece accusata ei. Utamur persecuti ex sea. Mei eu option omnesque postulant, timeam vituperatoribus id mei.
     Ei sale timeam ornatus mea. Mei cu graeci delectus constituam, nam ei vitae assentior complectitur. Alterum copiosae eos ea, prompta explicari et vel, eu eos dicta dissentiet necessitatibus. An nam illud noster voluptua. In purto unum error sed. Dictas electram his cu.
-</p>
+</p> -->

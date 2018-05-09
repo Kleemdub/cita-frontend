@@ -6,16 +6,22 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 // import { MzButtonModule, MzInputModule } from 'ng2-materialize';
 
 import { AppRoutingModule } from './app-routing.module';
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { EventService } from './api/event.service';
+import { UserService } from './api/user.service';
+import { LoginComponent } from './login/login.component';
+import { SignupComponent } from './signup/signup.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomePageComponent
+    HomePageComponent,
+    LoginComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,
@@ -24,11 +30,11 @@ import { EventService } from './api/event.service';
     // MaterializeModule
     BrowserAnimationsModule,
     // MzButtonModule
-
-
+    FormsModule
   ],
   providers: [
-    EventService
+    EventService,
+    UserService
   ],
   bootstrap: [AppComponent]
 })

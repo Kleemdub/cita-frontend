@@ -20,9 +20,16 @@
                         <h3>{{OneEvent.title}}</h3>
                     </div>
                 </div>
-                <ul>
-                    <li *ngFor="let OneSelecta of OneEvent.selectas">
-                        <p>{{OneSelecta.nickname}}</p>
+                <ul class="selectas-list">
+                    <li *ngFor="let OneSelecta of OneEvent.selectas, let last = last">
+                        <p *ngIf="!last">
+                            {{OneSelecta.nickname | uppercase}}
+                            <br/>
+                            <span class="txt-vs deep-orange-text text-darken-4">VS</span>
+                        </p>
+                        <p *ngIf="last">
+                            {{OneSelecta.nickname | uppercase}}
+                        </p>
                     </li>
                 </ul>
             </div>

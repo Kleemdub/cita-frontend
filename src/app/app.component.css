@@ -6,13 +6,14 @@
 /* NAV **************************************************************************** */
 /********************************************************************************* */
 .nav-wrapper {
-    padding-right:55px;
+    padding-right:60px;
 }
 
 .nav-wrapper a {
-    padding-left: 20px;
-    padding-right: 20px;
-    font-size: 1.5em;
+    padding-left: 15px;
+    padding-right: 15px;
+    font-size: 1.2em;
+    font-weight:300;
 }
 
 .brand-logo {
@@ -42,7 +43,7 @@
     padding:0;
     position: fixed;
     left:70px;
-    top:110px;
+    top:118px;
 }
 
 .global-container .colG .create-btn {
@@ -50,7 +51,7 @@
     padding:0;
     position: fixed;
     left:70px;
-    top:180px;
+    top:188px;
 }
 
 .global-container .colG .archives-btn {
@@ -58,7 +59,7 @@
     padding:0;
     position: fixed;
     left:70px;
-    top:250px;
+    top:258px;
 }
 
 .global-container .colG .tunes-btn {
@@ -66,7 +67,7 @@
     padding:0;
     position: fixed;
     left:70px;
-    top:320px;
+    top:328px;
 }
 
 .global-container .colG .contact-btn {
@@ -74,7 +75,7 @@
     padding:0;
     position: fixed;
     left:70px;
-    top:390px;
+    top:398px;
 }
 
 .global-container .colG .btn-floating i {
@@ -115,10 +116,6 @@
 }
 
 
-
-/* .tooltipped .backdrop{
-    background-color: purple;
-} */
 
 
 /* MEDIA QUERIES ****************************************************************** */

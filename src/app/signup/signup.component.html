@@ -1,0 +1,22 @@
+<p>
+  signup works!
+</p>
+
+<form (ngSubmit)="signupSubmit()">
+  <label>
+    Nickname:
+    <input type="text" [(ngModel)]="formCreds.nickname" name="nickname" />
+  </label>
+  <br/>
+  <label>
+    Email:
+    <input type="email" [(ngModel)]="formCreds.email" name="email" />
+  </label>
+  <br/>
+  <label>
+    Password:
+    <input type="password" [(ngModel)]="formCreds.password" name="password" />
+  </label>
+
+  <button>Sign Up</button>
+</form>

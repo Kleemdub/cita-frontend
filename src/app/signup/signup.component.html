@@ -5,17 +5,17 @@
 <form (ngSubmit)="signupSubmit()">
   <label>
     Nickname:
-    <input type="text" [(ngModel)]="formCreds.nickname" name="nickname" />
+    <input type="text" [(ngModel)]="formSignupCreds.nickname" name="nickname" />
   </label>
   <br/>
   <label>
     Email:
-    <input type="email" [(ngModel)]="formCreds.email" name="email" />
+    <input type="email" [(ngModel)]="formSignupCreds.email" name="email" />
   </label>
   <br/>
   <label>
     Password:
-    <input type="password" [(ngModel)]="formCreds.password" name="password" />
+    <input type="password" [(ngModel)]="formSignupCreds.password" name="password" />
   </label>
 
   <button>Sign Up</button>

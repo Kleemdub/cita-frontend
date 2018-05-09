@@ -39,6 +39,22 @@ export class UserService {
     });
   }
 
+  // POST /signup
+  postSignup(signupCreds: SignupCredentials) {
+    return this.ajaxEngine
+    .post(
+      `${environment.backendUrl}/api/signup`,
+      // { email:`blah`, password:`123`},
+      signupCreds,
+      { withCredentials: true }
+    )
+    .toPromise()
+    .then((apiResponse: any) => {
+      this.currentUser = apiResponse.userInfo;
+      return apiResponse;
+    });
+  }
+
   // GET /logout
   logout() {
     return this.ajaxEngine
@@ -61,6 +77,12 @@ export class User {
 }
 
 export class LoginCredentials {
+  email: string;
+  password: string;
+}
+
+export class SignupCredentials {
+  nickname: string;
   email: string;
   password: string;
 }

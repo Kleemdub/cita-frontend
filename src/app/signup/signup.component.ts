@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { UserService, SignupCredentials } from '../api/user.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-signup',
@@ -7,9 +9,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SignupComponent implements OnInit {
 
-  constructor() { }
+  formSignupCreds: SignupCredentials = new SignupCredentials();
+
+  constructor(
+    public userTruc: UserService,
+    private resTruc: Router
+  ) { }
 
   ngOnInit() {
+  }
+
+  signupSubmit() {
+    this.userTruc.postSignup(this.formSignupCreds)
+    .then((result) => {
+      console.log(result);
+      this.resTruc.navigateByUrl('/');
+    })
+    .catch((err) => {
+      console.log("Login error");
+      console.log(err);
+    });
   }
 
 }

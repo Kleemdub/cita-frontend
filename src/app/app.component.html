@@ -15,16 +15,20 @@
 <div class="navbar-fixed">
     <nav >
         <div class="nav-wrapper deep-orange darken-4">
-            <a href="#!" class="brand-logo">Champions in the Arena</a>
+            <a routerLink="/" class="brand-logo">Champions in the Arena</a>
             <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
             <ul class="right hide-on-med-and-down">
                 <li><a href="#">About Us</a></li>
                 <li><a href="#">Rules</a></li>
-                <li><a href="#">User account</a></li>
-                <li><a *ngIf="!userTruc.currentUser" routerLink="/signup">Sign Up</a></li>
-                <li><a *ngIf="!userTruc.currentUser"  routerLink="/login">Log In</a></li>
-                <p *ngIf="userTruc.currentUser">{{userTruc.currentUser.nickname}}</p>
-                <li><a *ngIf="userTruc.currentUser" (click)="logoutClick()">Log Out</a></li>
+                <!-- <li><a href="#">User account</a></li> -->
+                <li>
+                    <ul class="nav-user-link">
+                        <li *ngIf="!userTruc.currentUser"><a routerLink="/signup">Sign Up</a></li>
+                        <li *ngIf="!userTruc.currentUser"><a routerLink="/login">Log In</a></li>
+                        <li *ngIf="userTruc.currentUser"><a ref="#">{{userTruc.currentUser.nickname}}</a></li>
+                        <li *ngIf="userTruc.currentUser"><a (click)="logoutClick()"><i class="material-icons">cancel</i></a></li>
+                    </ul>
+                </li>
             </ul>
             <!-- mobile nav  -->
             <ul class="side-nav" id="mobile-demo">
@@ -42,7 +46,7 @@
         <div id="colG" class="colG col s12 l2">
             <!-- music-circle -->
             <a class="user-btn btn-floating btn-large waves-effect waves-light deep-orange darken-4 tooltipped" data-position="right" data-tooltip="Your Account"><i class="material-icons">account_circle</i></a>
-            <a class="create-btn btn-floating btn-large waves-effect waves-light deep-orange darken-4 tooltipped" data-position="right" data-tooltip="Create a New Sound Clash Event"><i class="material-icons">new_releases</i></a>
+            <a routerLink="/event/create" class="create-btn btn-floating btn-large waves-effect waves-light deep-orange darken-4 tooltipped" data-position="right" data-tooltip="Create a New Sound Clash Event"><i class="material-icons">new_releases</i></a>
             <a class="archives-btn btn-floating btn-large waves-effect waves-light deep-orange darken-4 tooltipped" data-position="right" data-tooltip="Sound Clash Archives"><i class="material-icons">layers</i></a>
             <a class="tunes-btn btn-floating btn-large waves-effect waves-light deep-orange darken-4 tooltipped" data-position="right" data-tooltip="All the Tunes"><i class="material-icons">album</i></a>
             <a class="contact-btn btn-floating btn-large waves-effect waves-light deep-orange darken-4 tooltipped" data-position="right" data-tooltip="Contact Us"><i class="material-icons">message</i></a>

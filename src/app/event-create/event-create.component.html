@@ -1,0 +1,377 @@
+
+<!-- <h2>{{userTruc.currentUser._id}}</h2> -->
+
+<h2>
+  <i class="material-icons">star</i>
+  <i class="material-icons">star</i>
+  <i class="material-icons">star</i>
+  Create a Sound Clash Event
+  <i class="material-icons">star</i>
+  <i class="material-icons">star</i>
+  <i class="material-icons">star</i>
+</h2>
+
+<form>
+
+  <mz-select-container>
+    <select mz-select [(ngModel)]="nbSelectas" name="nbSelectas" id="options-select" [placeholder]="'Select the number of participants'">
+        <option value="2">2 selectas</option>
+        <option value="3">3 selectas</option>
+        <option value="4">4 selectas</option>
+        <option value="5">5 selectas</option>
+    </select>
+  </mz-select-container>
+
+  <!-- <div *ngIf="nbSelectas">
+      <h3>Nombre de selectas : {{nbSelectas}}</h3>
+  </div> -->
+
+  <div class="tags-section">
+    <p class="select-tags-p">Select the genre(s) that you want to be played</p>
+    
+    <div class="check-box-list">
+      <mz-checkbox-container>
+        <input class="checkbox-green" mz-checkbox [label]="'Mento / Calypso'" name="genres[]" id="checkbox-id-1" type="checkbox" value="mento">
+      </mz-checkbox-container>
+      <mz-checkbox-container>
+        <input class="checkbox-green" mz-checkbox [label]="'Ska'" name="genres[]" id="checkbox-id-2" type="checkbox" value="ska">
+      </mz-checkbox-container>
+      <mz-checkbox-container>
+        <input class="checkbox-green" mz-checkbox [label]="'Rocksteady'" name="genres[]" id="checkbox-id-3" type="checkbox" value="rocksteady">
+      </mz-checkbox-container>
+    </div>
+    <div class="check-box-list">
+      <mz-checkbox-container>
+        <input class="checkbox-green" mz-checkbox [label]="'Boss Reggae'" name="genres[]" id="checkbox-id-4" type="checkbox" value="boss">
+      </mz-checkbox-container>
+      <mz-checkbox-container>
+        <input class="checkbox-green" mz-checkbox [label]="'Roots'" name="genres[]" id="checkbox-id-5" type="checkbox" value="roots">
+      </mz-checkbox-container>
+      <mz-checkbox-container>
+        <input class="checkbox-green" mz-checkbox [label]="'Rub-A-Dub'" name="genres[]" id="checkbox-id-6" type="checkbox" value="rubadub">
+      </mz-checkbox-container>
+    </div>
+    <div class="check-box-list">
+      <mz-checkbox-container>
+          <input class="checkbox-green" mz-checkbox [label]="'Dub'" name="genres[]" id="checkbox-id-7" type="checkbox" value="dub">
+        </mz-checkbox-container>
+        <mz-checkbox-container>
+          <input class="checkbox-green" mz-checkbox [label]="'Dancehall'" name="genres[]" id="checkbox-id-8" type="checkbox" value="dancehall">
+        </mz-checkbox-container>
+        <mz-checkbox-container>
+          <input class="checkbox-green" mz-checkbox [label]="'Digital'" name="genres[]" id="checkbox-id-9" type="checkbox" value="digital">
+        </mz-checkbox-container>
+    </div>
+  </div>
+
+  <div class="clear-both"></div>
+
+  <mz-select-container>
+    <select mz-select [(ngModel)]="nbRounds" name="nbRounds" id="options-select-2" [placeholder]="'Select the number of rounds'">
+        <option value="1">1 round</option>
+        <option value="2">2 rounds</option>
+        <option value="3">3 rounds ( 2 + final round )</option>
+    </select>
+  </mz-select-container>
+
+  <!-- <div *ngIf="nbRounds">
+      <h3>Nombre de rounds : {{nbRounds}}</h3>
+  </div> -->
+  <div class="clear-both v-sep-20"></div>
+
+  <div *ngIf="nbRounds == 1 || nbRounds == 2 || nbRounds == 3">
+    <div class="round-section">
+      <h4>Round 1</h4>
+  
+      <mz-select-container>
+        <select mz-select name="round1duration" [placeholder]="'Duration of this round'">
+            <option value="20">20 minutes</option>
+            <option value="30">30 minutes</option>
+            <option value="45">45 minutes</option>
+            <option value="60">60 minutes</option>
+        </select>
+      </mz-select-container>
+
+      <div class="clear-both v-sep-10"></div>
+
+      <p class="select-tags-p">You can select a specific genre to be played on this round</p>
+
+      <div class="check-box-list">
+        <mz-radio-button-container>
+          <input mz-radio-button checked="checked" [label]="'Whatever'" id="genres-radio-1" name="genreRadioGroup1" type="radio" value=""/><br/>
+        </mz-radio-button-container>
+
+        <mz-radio-button-container>
+          <input mz-radio-button [label]="'Mento / Calypso'" id="genres-radio-2" name="genreRadioGroup1" type="radio" value="mento"/><br/>
+        </mz-radio-button-container>
+  
+        <mz-radio-button-container>
+          <input mz-radio-button [label]="'Ska'" id="genres-radio-3" name="genreRadioGroup1" type="radio" value="ska"/><br/>
+        </mz-radio-button-container>
+      </div>
+
+      <div class="check-box-list">
+        <mz-radio-button-container>
+          <input mz-radio-button [label]="'Rocksteady'" id="genres-radio-4" name="genreRadioGroup1" type="radio" value="rocksteady"/><br/>
+        </mz-radio-button-container>
+  
+        <mz-radio-button-container>
+          <input mz-radio-button [label]="'Boss Reggae'" id="genres-radio-5" name="genreRadioGroup1" type="radio" value="boss"/><br/>
+        </mz-radio-button-container>
+
+        <mz-radio-button-container>
+          <input mz-radio-button [label]="'Roots'" id="genres-radio-6" name="genreRadioGroup1" type="radio" value="roots"/><br/>
+        </mz-radio-button-container>
+      </div>
+
+      <div class="check-box-list">
+        <mz-radio-button-container>
+          <input mz-radio-button [label]="'Rub-A-Dub'" id="genres-radio-7" name="genreRadioGroup1" type="radio" value="rubadub"/><br/>
+        </mz-radio-button-container>
+  
+        <mz-radio-button-container>
+          <input mz-radio-button [label]="'Dancehall'" id="genres-radio-8" name="genreRadioGroup1" type="radio" value="dancehall"/><br/>
+        </mz-radio-button-container>
+  
+        <mz-radio-button-container>
+          <input mz-radio-button [label]="'Digital'" id="genres-radio-9" name="genreRadioGroup1" type="radio" value="digital"/><br/>
+        </mz-radio-button-container>
+      </div>
+
+      <div class="clear-both v-sep-20"></div>
+
+      <p class="select-tags-p">You can select a specific style to be played on this round</p>
+
+      <div class="check-box-list">
+        <mz-radio-button-container>
+          <input mz-radio-button checked="checked" [label]="'Whatever'" id="genres-radio-10" name="styleRadioGroup1" type="radio" value=""/><br/>
+        </mz-radio-button-container>
+
+        <mz-radio-button-container>
+          <input mz-radio-button [label]="'Vocal'" id="genres-radio-11" name="styleRadioGroup1" type="radio" value="vocal"/><br/>
+        </mz-radio-button-container>
+  
+        <mz-radio-button-container>
+          <input mz-radio-button [label]="'DJ'" id="genres-radio-12" name="styleRadioGroup1" type="radio" value="dj"/><br/>
+        </mz-radio-button-container>
+      </div>
+
+      <div class="check-box-list">
+        <mz-radio-button-container>
+          <input mz-radio-button [label]="'Dub'" id="genres-radio-13" name="styleRadioGroup1" type="radio" value="dub"/><br/>
+        </mz-radio-button-container>
+
+        <mz-radio-button-container>
+          <input mz-radio-button [label]="'Instrumental'" id="genres-radio-14" name="styleRadioGroup1" type="radio" value="instrumental"/><br/>
+        </mz-radio-button-container>
+      </div>
+
+      <div class="clear-both"></div>
+    </div>
+  </div>
+
+  <div *ngIf="nbRounds == 2 || nbRounds == 3">
+    <div class="round-section">
+      <h4>Round 2</h4>
+  
+      <mz-select-container>
+        <select mz-select name="round2duration" [placeholder]="'Duration of this round'">
+            <option value="20">20 minutes</option>
+            <option value="30">30 minutes</option>
+            <option value="45">45 minutes</option>
+            <option value="60">60 minutes</option>
+        </select>
+      </mz-select-container>
+
+      <div class="clear-both v-sep-10"></div>
+
+      <p class="select-tags-p">You can select a specific genre to be played on this round</p>
+
+      <div class="check-box-list">
+        <mz-radio-button-container>
+          <input mz-radio-button checked="checked" [label]="'Whatever'" id="genres-radio-21" name="genreRadioGroup2" type="radio" value=""/><br/>
+        </mz-radio-button-container>
+
+        <mz-radio-button-container>
+          <input mz-radio-button [label]="'Mento / Calypso'" id="genres-radio-22" name="genreRadioGroup2" type="radio" value="mento"/><br/>
+        </mz-radio-button-container>
+  
+        <mz-radio-button-container>
+          <input mz-radio-button [label]="'Ska'" id="genres-radio-23" name="genreRadioGroup2" type="radio" value="ska"/><br/>
+        </mz-radio-button-container>
+      </div>
+
+      <div class="check-box-list">
+        <mz-radio-button-container>
+          <input mz-radio-button [label]="'Rocksteady'" id="genres-radio-24" name="genreRadioGroup2" type="radio" value="rocksteady"/><br/>
+        </mz-radio-button-container>
+  
+        <mz-radio-button-container>
+          <input mz-radio-button [label]="'Boss Reggae'" id="genres-radio-25" name="genreRadioGroup2" type="radio" value="boss"/><br/>
+        </mz-radio-button-container>
+
+        <mz-radio-button-container>
+          <input mz-radio-button [label]="'Roots'" id="genres-radio-26" name="genreRadioGroup2" type="radio" value="roots"/><br/>
+        </mz-radio-button-container>
+      </div>
+
+      <div class="check-box-list">
+        <mz-radio-button-container>
+          <input mz-radio-button [label]="'Rub-A-Dub'" id="genres-radio-27" name="genreRadioGroup2" type="radio" value="rubadub"/><br/>
+        </mz-radio-button-container>
+  
+        <mz-radio-button-container>
+          <input mz-radio-button [label]="'Dancehall'" id="genres-radio-28" name="genreRadioGroup2" type="radio" value="dancehall"/><br/>
+        </mz-radio-button-container>
+  
+        <mz-radio-button-container>
+          <input mz-radio-button [label]="'Digital'" id="genres-radio-29" name="genreRadioGroup2" type="radio" value="digital"/><br/>
+        </mz-radio-button-container>
+      </div>
+
+      <div class="clear-both v-sep-20"></div>
+
+      <p class="select-tags-p">You can select a specific style to be played on this round</p>
+
+      <div class="check-box-list">
+        <mz-radio-button-container>
+          <input mz-radio-button checked="checked" [label]="'Whatever'" id="genres-radio-30" name="styleRadioGroup2" type="radio" value=""/><br/>
+        </mz-radio-button-container>
+
+        <mz-radio-button-container>
+          <input mz-radio-button [label]="'Vocal'" id="genres-radio-31" name="styleRadioGroup2" type="radio" value="vocal"/><br/>
+        </mz-radio-button-container>
+  
+        <mz-radio-button-container>
+          <input mz-radio-button [label]="'DJ'" id="genres-radio-32" name="styleRadioGroup2" type="radio" value="dj"/><br/>
+        </mz-radio-button-container>
+      </div>
+
+      <div class="check-box-list">
+        <mz-radio-button-container>
+          <input mz-radio-button [label]="'Dub'" id="genres-radio-33" name="styleRadioGroup2" type="radio" value="dub"/><br/>
+        </mz-radio-button-container>
+
+        <mz-radio-button-container>
+          <input mz-radio-button [label]="'Instrumental'" id="genres-radio-34" name="styleRadioGroup2" type="radio" value="instrumental"/><br/>
+        </mz-radio-button-container>
+      </div>
+
+      <div class="clear-both"></div>
+    </div>
+  </div>
+
+  <div *ngIf="nbRounds == 3">
+    <div class="round-section">
+      <h4>Final Round</h4>
+  
+      <mz-select-container>
+        <select mz-select name="round3duration" [placeholder]="'Duration of this round'">
+            <option value="20">20 minutes</option>
+            <option value="30">30 minutes</option>
+            <option value="45">45 minutes</option>
+            <option value="60">60 minutes</option>
+        </select>
+      </mz-select-container>
+
+      <div class="clear-both v-sep-10"></div>
+
+      <p class="select-tags-p">You can select a specific genre to be played on this round</p>
+
+      <div class="check-box-list">
+        <mz-radio-button-container>
+          <input mz-radio-button checked="checked" [label]="'Whatever'" id="genres-radio-41" name="genreRadioGroup3" type="radio" value=""/><br/>
+        </mz-radio-button-container>
+
+        <mz-radio-button-container>
+          <input mz-radio-button [label]="'Mento / Calypso'" id="genres-radio-42" name="genreRadioGroup3" type="radio" value="mento"/><br/>
+        </mz-radio-button-container>
+  
+        <mz-radio-button-container>
+          <input mz-radio-button [label]="'Ska'" id="genres-radio-43" name="genreRadioGroup3" type="radio" value="ska"/><br/>
+        </mz-radio-button-container>
+      </div>
+
+      <div class="check-box-list">
+        <mz-radio-button-container>
+          <input mz-radio-button [label]="'Rocksteady'" id="genres-radio-44" name="genreRadioGroup3" type="radio" value="rocksteady"/><br/>
+        </mz-radio-button-container>
+  
+        <mz-radio-button-container>
+          <input mz-radio-button [label]="'Boss Reggae'" id="genres-radio-45" name="genreRadioGroup3" type="radio" value="boss"/><br/>
+        </mz-radio-button-container>
+
+        <mz-radio-button-container>
+          <input mz-radio-button [label]="'Roots'" id="genres-radio-46" name="genreRadioGroup3" type="radio" value="roots"/><br/>
+        </mz-radio-button-container>
+      </div>
+
+      <div class="check-box-list">
+        <mz-radio-button-container>
+          <input mz-radio-button [label]="'Rub-A-Dub'" id="genres-radio-47" name="genreRadioGroup3" type="radio" value="rubadub"/><br/>
+        </mz-radio-button-container>
+  
+        <mz-radio-button-container>
+          <input mz-radio-button [label]="'Dancehall'" id="genres-radio-48" name="genreRadioGroup3" type="radio" value="dancehall"/><br/>
+        </mz-radio-button-container>
+  
+        <mz-radio-button-container>
+          <input mz-radio-button [label]="'Digital'" id="genres-radio-49" name="genreRadioGroup3" type="radio" value="digital"/><br/>
+        </mz-radio-button-container>
+      </div>
+
+      <div class="clear-both v-sep-20"></div>
+
+      <p class="select-tags-p">You can select a specific style to be played on this round</p>
+
+      <div class="check-box-list">
+        <mz-radio-button-container>
+          <input mz-radio-button checked="checked" [label]="'Whatever'" id="genres-radio-50" name="styleRadioGroup3" type="radio" value=""/><br/>
+        </mz-radio-button-container>
+
+        <mz-radio-button-container>
+          <input mz-radio-button [label]="'Vocal'" id="genres-radio-51" name="styleRadioGroup3" type="radio" value="vocal"/><br/>
+        </mz-radio-button-container>
+  
+        <mz-radio-button-container>
+          <input mz-radio-button [label]="'DJ'" id="genres-radio-52" name="styleRadioGroup3" type="radio" value="dj"/><br/>
+        </mz-radio-button-container>
+      </div>
+
+      <div class="check-box-list">
+        <mz-radio-button-container>
+          <input mz-radio-button [label]="'Dub'" id="genres-radio-53" name="styleRadioGroup3" type="radio" value="dub"/><br/>
+        </mz-radio-button-container>
+
+        <mz-radio-button-container>
+          <input mz-radio-button [label]="'Instrumental'" id="genres-radio-54" name="styleRadioGroup3" type="radio" value="instrumental"/><br/>
+        </mz-radio-button-container>
+      </div>
+
+      <div class="clear-both"></div>
+    </div>
+  </div>
+
+  <!-- <div class="clear-both v-sep-20"></div> -->
+
+  <div *ngIf="nbSelectas && nbRounds">
+    <button class="waves-effect waves-light btn create-event-form-btn deep-orange darken-4">Create this Event</button>
+    <div class="clear-both v-sep-20"></div>
+  </div>
+
+</form>
+
+<div class="clear-both v-sep-60"></div>
+
+<!-- <p>Add a Final Round ?</p>
+  <div class="switch">
+    <label>
+      No
+      <input type="checkbox">
+      <span class="lever"></span>
+      Yes
+    </label>
+  </div> -->
+
+
+

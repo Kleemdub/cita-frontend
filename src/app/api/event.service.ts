@@ -20,10 +20,24 @@ export class EventService {
 
 }
 
+export class User {
+  _id: string;
+  nickname: string;
+  email: string;
+  // encryptedPassword: string;
+  role: string;
+  cup: number;
+  // avatar: string;
+  events: Array<string>;
+  createdAt?: Date; // '?' makes this property optional
+  updatedAt?: Date;
+}
+
 export class Event {
   _id: string;
   title: string;
   admin: User;
+  tags: Array<string>;
   nbSelectas: number;
   selectas: Array<User>;
   nbRounds: number;
@@ -33,18 +47,32 @@ export class Event {
   updatedAt?: Date;
 }
 
-export class User {
+export class Round {
   _id: string;
-  nickname: string;
-  email: string;
-  encryptedPassword: string;
-  role: string;
-  cup: number;
-  // avatar: string;
-  events: Array<string>;
+  roundNumber: number;
+  status: string;
   createdAt?: Date; // '?' makes this property optional
   updatedAt?: Date;
 }
 
 
 
+
+// roundNumber: { type: Number },
+//             status: { 
+//                 type: String, 
+//                 enum: ["open", "ready", "displayed", "closed"],
+//                 default: "open"
+//             },
+//             nbSelectas: { type: Number },
+//             duration : { type: Number },
+//             isFinal : { type: Boolean },
+//             selectas: [
+//                 {
+//                     type: Schema.Types.ObjectId,
+//                     ref: 'User'
+//                 }
+//             ],
+//             genres: [ { type: String } ],
+//             style: { type: String },
+//             sets: [

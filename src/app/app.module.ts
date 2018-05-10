@@ -4,6 +4,7 @@ import { HttpClientModule } from '@angular/common/http';
 // import { MaterializeModule } from 'angular2-materialize';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 // import { MzButtonModule, MzInputModule } from 'ng2-materialize';
+import { MzSelectModule, MzRadioButtonModule, MzCheckboxModule } from 'ng2-materialize';
 
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule } from '@angular/forms';
@@ -14,6 +15,7 @@ import { EventService } from './api/event.service';
 import { UserService } from './api/user.service';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
+import { EventCreateComponent } from './event-create/event-create.component';
 
 
 @NgModule({
@@ -21,7 +23,8 @@ import { SignupComponent } from './signup/signup.component';
     AppComponent,
     HomePageComponent,
     LoginComponent,
-    SignupComponent
+    SignupComponent,
+    EventCreateComponent
   ],
   imports: [
     BrowserModule,
@@ -30,6 +33,9 @@ import { SignupComponent } from './signup/signup.component';
     // MaterializeModule
     BrowserAnimationsModule,
     // MzButtonModule
+    MzSelectModule,
+    MzRadioButtonModule,
+    MzCheckboxModule,
     FormsModule
   ],
   providers: [

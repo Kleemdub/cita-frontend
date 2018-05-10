@@ -18,6 +18,13 @@ export class EventService {
     .toPromise();
   }
 
+  // POST /api/events
+  createNewEvent(newEvent: Event) {
+    return this.ajaxEngine
+    .post(`${environment.backendUrl}/api/events`, newEvent)
+    .toPromise();
+  }
+
 }
 
 export class User {
@@ -36,13 +43,13 @@ export class User {
 export class Event {
   _id?: string;
   title: string;
-  admin: User;
+  admin: any;
   tags: Array<string> = [];
   nbSelectas: number;
-  selectas: Array<User> = [];
+  selectas: Array<any> = [];
   nbRounds: number;
   // rounds: Array<any> = [ {}, {}, {} ];
-  rounds: Array<Round>;
+  rounds: Array<Round> = [];
   status: string;
   createdAt?: Date; // '?' makes this property optional
   updatedAt?: Date;
@@ -55,10 +62,10 @@ export class Round {
   nbSelectas: number;
   duration: number;
   isFinal: boolean;
-  selectas: Array<User>;
+  selectas: Array<any> = [];
   genres: string;
   style: string;
-  sets: Array<any>;
+  sets: Array<any> = [];
 }
 
 

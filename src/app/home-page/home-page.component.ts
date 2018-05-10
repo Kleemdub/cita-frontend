@@ -38,7 +38,6 @@ export class HomePageComponent implements OnInit {
       // Tool tips
       $('.tooltipped').tooltip({'delay':10});
     });
-    
   }
 
 }

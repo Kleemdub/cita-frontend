@@ -19,6 +19,7 @@ import { EventCreateComponent } from './event-create/event-create.component';
 import { OpenEventComponent } from './open-event/open-event.component';
 import { UserAccountComponent } from './user-account/user-account.component';
 import { AdminService } from './api/admin.service';
+import { EventDetailsComponent } from './event-details/event-details.component';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { AdminService } from './api/admin.service';
     SignupComponent,
     EventCreateComponent,
     OpenEventComponent,
-    UserAccountComponent
+    UserAccountComponent,
+    EventDetailsComponent
   ],
   imports: [
     BrowserModule,

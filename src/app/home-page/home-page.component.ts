@@ -26,18 +26,18 @@ export class HomePageComponent implements OnInit {
       console.log(err);
     });
 
-    $(document).ready(function(){
-      // Nav collapse
-      $(".button-collapse").sideNav();
-      // Side buttons
-      $('.global-container .colG .btn-floating').hover(function(){
-        $(this).addClass('pulse');
-      }, function(){
-        $(this).removeClass('pulse');
-      });
-      // Tool tips
-      $('.tooltipped').tooltip({'delay':10});
-    });
+    // $(document).ready(function(){
+    //   // Nav collapse
+    //   $(".button-collapse").sideNav();
+    //   // Side buttons
+    //   $('.global-container .colG .btn-floating').hover(function(){
+    //     $(this).addClass('pulse');
+    //   }, function(){
+    //     $(this).removeClass('pulse');
+    //   });
+    //   // Tool tips
+    //   $('.tooltipped').tooltip({'delay':10});
+    // });
   }
 
 }

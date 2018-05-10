@@ -18,7 +18,15 @@ export class EventService {
     .toPromise();
   }
 
-  // GET /api/events
+  // GET /api/events/:eventId
+  getEventDetails(eventId) {
+    return this.ajaxEngine
+    // .get('http://localhost:3000/api/events')
+    .get(`${environment.backendUrl}/api/events/${eventId}`)
+    .toPromise();
+  }
+
+  // GET /api/events/open
   getOpenEventList() {
     return this.ajaxEngine
     // .get('http://localhost:3000/api/events')

@@ -1,0 +1,33 @@
+<h2>Sound Clash Event</h2>
+
+<!-- <h3>{{event?.admin.nicknamne}}</h3> -->
+
+<h3>{{event?.admin.nickname}}</h3>
+
+<ul>
+  <li *ngFor="let oneTag of event?.tags">
+    <p>{{oneTag}}</p>
+  </li>
+</ul>
+
+<ul>
+  <li *ngFor="let oneRound of event?.rounds">
+
+    <h4 *ngIf="!oneRound.isFinal" >Round {{oneRound.roundNumber}}</h4>
+    <h4 *ngIf="oneRound.isFinal" >Final Round</h4>
+
+    <p>{{oneRound.genres}} / {{oneRound.style}}</p>
+  </li>
+</ul>
+
+<div *ngIf="isAnybody" >
+  <a href="#">Join in</a>
+</div>
+
+<div *ngIf="isCurrentAdmin" >
+  <p>Admin content</p>
+</div>
+
+<div *ngIf="isParticipant" >
+    <p>Participant content</p>
+</div>

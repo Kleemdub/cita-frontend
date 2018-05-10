@@ -34,14 +34,15 @@ export class User {
 }
 
 export class Event {
-  _id: string;
+  _id?: string;
   title: string;
   admin: User;
-  tags: Array<string>;
+  tags: Array<string> = [];
   nbSelectas: number;
-  selectas: Array<User>;
+  selectas: Array<User> = [];
   nbRounds: number;
-  rounds: Array<number>;
+  // rounds: Array<any> = [ {}, {}, {} ];
+  rounds: Array<Round>;
   status: string;
   createdAt?: Date; // '?' makes this property optional
   updatedAt?: Date;
@@ -51,28 +52,13 @@ export class Round {
   _id: string;
   roundNumber: number;
   status: string;
-  createdAt?: Date; // '?' makes this property optional
-  updatedAt?: Date;
+  nbSelectas: number;
+  duration: number;
+  isFinal: boolean;
+  selectas: Array<User>;
+  genres: string;
+  style: string;
+  sets: Array<any>;
 }
 
 
-
-
-// roundNumber: { type: Number },
-//             status: { 
-//                 type: String, 
-//                 enum: ["open", "ready", "displayed", "closed"],
-//                 default: "open"
-//             },
-//             nbSelectas: { type: Number },
-//             duration : { type: Number },
-//             isFinal : { type: Boolean },
-//             selectas: [
-//                 {
-//                     type: Schema.Types.ObjectId,
-//                     ref: 'User'
-//                 }
-//             ],
-//             genres: [ { type: String } ],
-//             style: { type: String },
-//             sets: [

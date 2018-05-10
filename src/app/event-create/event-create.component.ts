@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService, LoginCredentials } from '../api/user.service';
-import { EventService, Event } from '../api/event.service';
+import { EventService, Event, Round } from '../api/event.service';
 declare const $: any;
 
 @Component({
@@ -10,8 +10,16 @@ declare const $: any;
 })
 export class EventCreateComponent implements OnInit {
 
-  nbSelectas: number;
-  nbRounds: number;
+  // nbSelectas: number;
+  // nbRounds: number;
+  // round1duration: number;
+  // round2duration: number;
+  // round3duration: number;
+
+  newEvent: Event = new Event;
+  round1: Round = new Round;
+  round2: Round = new Round;
+  round3: Round = new Round;
 
   constructor(
     public userTruc: UserService,
@@ -25,6 +33,19 @@ export class EventCreateComponent implements OnInit {
     //   $('select').material_select();
     // });
     
+  }
+
+  updateTags(tag) {
+    const index = this.newEvent.tags.indexOf(tag);
+    console.log("ok");
+    
+    if (index === -1) {
+      this.newEvent.tags.push(tag);
+    }
+    else {
+      this.newEvent.tags.splice(index, 1);
+    }
+    console.log(this.newEvent.tags);
   }
 
 }

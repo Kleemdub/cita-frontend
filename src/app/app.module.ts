@@ -16,6 +16,9 @@ import { UserService } from './api/user.service';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { EventCreateComponent } from './event-create/event-create.component';
+import { OpenEventComponent } from './open-event/open-event.component';
+import { UserAccountComponent } from './user-account/user-account.component';
+import { AdminService } from './api/admin.service';
 
 
 @NgModule({
@@ -24,7 +27,9 @@ import { EventCreateComponent } from './event-create/event-create.component';
     HomePageComponent,
     LoginComponent,
     SignupComponent,
-    EventCreateComponent
+    EventCreateComponent,
+    OpenEventComponent,
+    UserAccountComponent
   ],
   imports: [
     BrowserModule,
@@ -40,7 +45,8 @@ import { EventCreateComponent } from './event-create/event-create.component';
   ],
   providers: [
     EventService,
-    UserService
+    UserService,
+    AdminService
   ],
   bootstrap: [AppComponent]
 })

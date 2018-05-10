@@ -72,8 +72,7 @@ export class EventCreateComponent implements OnInit {
       this.newEvent.rounds.push(this.round3);
     }
     
-
-
+    
     this.apiEvent.createNewEvent(this.newEvent)
     .then((response) => {
       console.log(response);

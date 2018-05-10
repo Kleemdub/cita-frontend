@@ -22,7 +22,7 @@ export class HomePageComponent implements OnInit {
       this.events = result;
     })
     .catch((err) => {
-      console.log('Phone list error');
+      console.log('Event list error');
       console.log(err);
     });
 

@@ -1,0 +1,31 @@
+
+<div class="now-section">
+
+  <h2>Join the next Sound Clash</h2>
+  
+  <ul>
+      <li *ngFor="let OneEvent of events">
+          <div class="now-section-box">
+              <div class="now-section-header">
+                  <div class="now-section-header-inner">
+                      <h3>{{OneEvent.title}}</h3>
+                  </div>
+              </div>
+              <ul class="selectas-list">
+                  <li *ngFor="let OneSelecta of OneEvent.selectas, let last = last">
+                      <p *ngIf="!last">
+                          {{OneSelecta.nickname | uppercase}}
+                          <br/>
+                          <span class="txt-vs deep-orange-text text-darken-4">VS</span>
+                      </p>
+                      <p *ngIf="last">
+                          {{OneSelecta.nickname | uppercase}}
+                      </p>
+                  </li>
+              </ul>
+          </div>
+      </li>
+  </ul>
+  <!-- <div class="ribbon ribbon-g"></div>
+  <div class="ribbon ribbon-d"></div> -->
+</div>

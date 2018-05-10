@@ -4,48 +4,19 @@ import { environment } from '../../environments/environment';
 import 'rxjs/operator/toPromise';
 
 @Injectable()
-export class EventService {
+export class AdminService {
 
   constructor(
     private ajaxEngine: HttpClient
   ) { }
 
-  // GET /api/events
-  getEventList() {
+  // GET /api/admins/:adminId/events
+  getAdminEventList(adminId) {
     return this.ajaxEngine
-    // .get('http://localhost:3000/api/events')
-    .get(`${environment.backendUrl}/api/events`)
+    .get(`${environment.backendUrl}/api/admins/${adminId}/events`)
     .toPromise();
   }
 
-  // GET /api/events
-  getOpenEventList() {
-    return this.ajaxEngine
-    // .get('http://localhost:3000/api/events')
-    .get(`${environment.backendUrl}/api/events/open`)
-    .toPromise();
-  }
-
-  // POST /api/events
-  createNewEvent(newEvent: Event) {
-    return this.ajaxEngine
-    .post(`${environment.backendUrl}/api/events`, newEvent)
-    .toPromise();
-  }
-
-}
-
-export class User {
-  _id: string;
-  nickname: string;
-  email: string;
-  // encryptedPassword: string;
-  role: string;
-  cup: number;
-  // avatar: string;
-  events: Array<string>;
-  createdAt?: Date; // '?' makes this property optional
-  updatedAt?: Date;
 }
 
 export class Event {
@@ -75,5 +46,3 @@ export class Round {
   style: string;
   sets: Array<any> = [];
 }
-
-

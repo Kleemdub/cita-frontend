@@ -4,6 +4,7 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { EventCreateComponent } from './event-create/event-create.component';
+import { UserAccountComponent } from './user-account/user-account.component';
 
 const routes: Routes = [
   { path: '', component: HomePageComponent },
@@ -11,6 +12,8 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
 
   { path: 'signup', component: SignupComponent },
+
+  { path: 'user/:userId', component: UserAccountComponent },
 
   { path: 'event/create', component: EventCreateComponent }
 

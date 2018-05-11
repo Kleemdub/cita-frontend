@@ -1,0 +1,16 @@
+<h2>Create a Set</h2>
+
+
+<form>
+  <fieldset>
+    <label> Title </label>
+    <input type="text" [(ngModel)]="newSet.name" name="brand" required />
+
+    <input type="file" name="mp3" ng2FileSelect [uploader]="uploader" />
+
+  </fieldset>
+  <button (click)="submit()"> submit </button>
+</form>
+
+<p> {{ feedback }} </p>
+<!-- <p>  feedback  </p> -->

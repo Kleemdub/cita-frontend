@@ -6,6 +6,7 @@ import { SignupComponent } from './signup/signup.component';
 import { EventCreateComponent } from './event-create/event-create.component';
 import { UserAccountComponent } from './user-account/user-account.component';
 import { EventDetailsComponent } from './event-details/event-details.component';
+import { SetCreateComponent } from './set-create/set-create.component';
 
 const routes: Routes = [
   { path: '', component: HomePageComponent },
@@ -18,7 +19,9 @@ const routes: Routes = [
 
   { path: 'event/create', component: EventCreateComponent },
 
-  { path: 'event/:eventId', component: EventDetailsComponent }
+  { path: 'event/:eventId', component: EventDetailsComponent },
+
+  { path: 'set/round/:roundId/user/:userId', component: SetCreateComponent }
 
 
   // { path: 'phones', component: PhoneListComponent },

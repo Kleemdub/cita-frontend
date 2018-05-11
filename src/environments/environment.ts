@@ -5,5 +5,8 @@
 
 export const environment = {
   backendUrl: 'http://localhost:3000',
-  production: false
+  production: false,
+  mixcloudId: 'Mwt8a8qR83Hj7EFjzX',
+  mixCloudSecret: 'H9PZv9xHWyxQ5t8h9N5EndvvyCc3UnCt',
+  mixCloudAccessToken: 'HJtqWA6CCAHKvkhTsLfDntjjyvzBMuRE'
 };

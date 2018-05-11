@@ -1,9 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
-// import { MaterializeModule } from 'angular2-materialize';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-// import { MzButtonModule, MzInputModule } from 'ng2-materialize';
 import { MzSelectModule, MzRadioButtonModule, MzCheckboxModule } from 'ng2-materialize';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -20,6 +18,10 @@ import { OpenEventComponent } from './open-event/open-event.component';
 import { UserAccountComponent } from './user-account/user-account.component';
 import { AdminService } from './api/admin.service';
 import { EventDetailsComponent } from './event-details/event-details.component';
+import { SetCreateComponent } from './set-create/set-create.component';
+import { SetService } from './api/set.service';
+// import { FileSelectDirective } from 'ng2-file-upload';
+import { FileSelectDirective, FileDropDirective, FileUploader } from 'ng2-file-upload/ng2-file-upload';
 
 
 @NgModule({
@@ -31,24 +33,27 @@ import { EventDetailsComponent } from './event-details/event-details.component';
     EventCreateComponent,
     OpenEventComponent,
     UserAccountComponent,
-    EventDetailsComponent
+    EventDetailsComponent,
+    SetCreateComponent,
+    FileSelectDirective
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    // MaterializeModule
     BrowserAnimationsModule,
-    // MzButtonModule
     MzSelectModule,
     MzRadioButtonModule,
     MzCheckboxModule,
     FormsModule
+  
   ],
   providers: [
     EventService,
     UserService,
-    AdminService
+    AdminService,
+    SetService
   ],
   bootstrap: [AppComponent]
 })

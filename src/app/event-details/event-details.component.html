@@ -34,9 +34,9 @@
 
     <div *ngFor="let oneRound of event?.rounds">
       
-      <a *ngIf="!oneRound.isFinal" >Create your set for Round {{oneRound.roundNumber}}</a>
-      <a *ngIf="oneRound.isFinal" >Create your Set for the Final Round</a>
-      <p>{{oneRound._id}}</p>
+      <a *ngIf="!oneRound.isFinal"  [routerLink]="['/set/round', oneRound._id, 'user', userTruc.currentUser._id]" >Create your set for Round {{oneRound.roundNumber}}</a>
+      <a *ngIf="oneRound.isFinal" [routerLink]="['/set/round', oneRound._id, 'user', userTruc.currentUser._id]" >Create your Set for the Final Round</a>
+      
     </div>
 
 </div>

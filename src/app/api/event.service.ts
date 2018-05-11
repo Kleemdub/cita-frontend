@@ -19,7 +19,7 @@ export class EventService {
   }
 
   // GET /api/events/:eventId
-  getEventDetails(eventId) {
+  getEventDetails(eventId: any) {
     return this.ajaxEngine
     // .get('http://localhost:3000/api/events')
     .get(`${environment.backendUrl}/api/events/${eventId}`)
@@ -41,6 +41,21 @@ export class EventService {
     .toPromise();
   }
 
+  // PUT /api/events/:eventId
+  joinIn(eventId: any, selecta: Selecta) {
+    return this.ajaxEngine
+    .put(`${environment.backendUrl}/api/events/${eventId}`, selecta)
+    .toPromise();
+  }
+
+}
+
+export class Selecta {
+  _id: string;
+  nickname: string;
+  nbRounds: number;
+  nbSelectas: number;
+  nbRegistrations: number;
 }
 
 export class User {
@@ -62,6 +77,7 @@ export class Event {
   admin: any;
   tags: Array<string> = [];
   nbSelectas: number;
+  registrations: number;
   selectas: Array<any> = [];
   nbRounds: number;
   // rounds: Array<any> = [ {}, {}, {} ];

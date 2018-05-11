@@ -40,6 +40,7 @@ export class EventCreateComponent implements OnInit {
     const eventAdmin = this.userTruc.currentUser._id;
 
     this.newEvent.title = "";
+    this.newEvent.registrations = 1;
     this.newEvent.admin = this.userTruc.currentUser._id;
     this.newEvent.status = "open";
     this.newEvent.selectas.push(eventAdmin);

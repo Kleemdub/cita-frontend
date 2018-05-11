@@ -49,4 +49,13 @@ export class AppComponent {
       console.log(err);
     });
   }
+
+  userRedirect() {
+    if(this.userTruc.currentUser) {
+      this.resTruc.navigateByUrl(`/user/${this.userTruc.currentUser._id}`);
+    }
+    else {
+      this.resTruc.navigateByUrl('/login');
+    }
+  }
 }

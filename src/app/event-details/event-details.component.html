@@ -20,8 +20,9 @@
   </li>
 </ul>
 
-<div *ngIf="isAnybody" >
-  <a href="#">Join in</a>
+<div *ngIf="isAnybody && isOpen" >
+  <!-- <a href="#">Join in</a> -->
+  <button (click)="joinClick()">Join in</button>
 </div>
 
 <div *ngIf="isCurrentAdmin" >
@@ -30,4 +31,12 @@
 
 <div *ngIf="isParticipant" >
     <p>Participant content</p>
+
+    <div *ngFor="let oneRound of event?.rounds">
+      
+      <a *ngIf="!oneRound.isFinal" >Create your set for Round {{oneRound.roundNumber}}</a>
+      <a *ngIf="oneRound.isFinal" >Create your Set for the Final Round</a>
+      <p>{{oneRound._id}}</p>
+    </div>
+
 </div>

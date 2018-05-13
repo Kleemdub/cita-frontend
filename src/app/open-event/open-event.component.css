@@ -1,0 +1,106 @@
+* {
+    margin:0;
+    padding:0;
+}
+
+.now-section {
+    padding-top:30px;
+}
+
+.now-section h2 {
+    padding:0;
+    margin:0;
+    color: #bf360c;
+    text-align: center;
+    font-family: 'Kadwa', serif;
+    font-size:2rem;
+    margin-bottom:15px;
+    margin-top:10px;
+    /* background: #0f0; */
+    /* height:33px; */
+    line-height: 1em;
+}
+
+.now-section h2 .h2-inner {
+    padding-top:0px;
+}
+
+.now-section h2 i {
+    padding:0;
+    margin:0;
+    font-size:2.5rem;
+    /* font-style: italic; */
+    /* margin-bottom:15px;
+    height:33px; */
+    line-height: 1em;
+    margin-top:10px;
+}
+
+.now-section .now-section-box {
+    background-color: rgba(0, 0, 0, 0.04);
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.2);
+    height:180px; 
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.now-section .now-section-box:hover {
+    cursor: pointer;
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.35);
+}
+
+.now-section h3 {
+    text-align: center;
+    font-family: 'Kadwa', serif;
+    padding:0;
+    margin:0;
+    font-size:1.4rem;
+    color: #fff;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-top: 20px;
+}
+
+.now-section .col {
+    padding-left: 0px;
+    padding-right: 0px;
+    margin-bottom: 10px;
+}
+
+.col-odd {
+    padding-left: 10px;
+    padding-right: 0px;
+}
+
+.col-even {
+    padding-left: 0px;
+    padding-right: 10px;
+}
+
+.section-box-inner {
+    padding: 20px;
+    position: relative;
+}
+
+.selectas-list {
+    float: left;
+}
+
+.wanted {
+    /* background: #bf360c; */
+    background: url('../../assets/images/pastille.png');
+    color: #fff;
+    position: absolute;
+    width:120px;
+    height:120px;
+    right:15px;
+    top:8px;
+    transform: rotate(20deg);
+}
+
+.wanted p {
+    text-align: center;
+    font-size: 1rem;
+    line-height: 1.3rem;
+    padding-top:30px;
+}
+

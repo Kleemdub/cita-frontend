@@ -1,16 +1,46 @@
-<h2>Create a Set</h2>
+<h2 class="brown-text text-darken-4">
+    <i class="material-icons deep-orange-text text-darken-4">star</i>
+    <i class="material-icons deep-orange-text text-darken-4">star</i>
+    <i class="material-icons deep-orange-text text-darken-4">star</i>
+    Create your Set
+    <i class="material-icons deep-orange-text text-darken-4">star</i>
+    <i class="material-icons deep-orange-text text-darken-4">star</i>
+    <i class="material-icons deep-orange-text text-darken-4">star</i>
+</h2>
 
-
+<div class="v-sep-20 tri-beige-h" ></div>
+<div class="v-sep-20" ></div>
 <form>
-  <fieldset>
-    <label> Title </label>
-    <input type="text" [(ngModel)]="newSet.name" name="brand" required />
+  <!-- <label> Title </label>
+  <input type="text" [(ngModel)]="newSet.name" name="brand" required /> -->
 
-    <input type="file" name="mp3" ng2FileSelect [uploader]="uploader" />
+  <p class="audio-file-label" >Select a mp3 file for your set</p><br/>
+  <input id="audio" type="file" name="mp3" ng2FileSelect [uploader]="uploader" />
+  <div class="v-sep-20" ></div>
+  <div class="v-sep-20" ></div>
 
-  </fieldset>
-  <button (click)="submit()"> submit </button>
+  <div class="input-field text-area-section col s12">
+    <i class="material-icons prefix">mode_edit</i>
+    <input id="title" [(ngModel)]="newSet.name" type="text" name="title" class="validate">
+    <label for="title">Title</label>
+  </div>
+  
+  <div class="blah">
+    <div class="input-field text-area-section col s12">
+      <i class="material-icons prefix">mode_edit</i>
+      <textarea name="description" [(ngModel)]="newSet.description" id="tracklist" class="materialize-textarea"></textarea>
+      <label for="tracklist">Tracklist</label>
+    </div>
+  </div>
+
+  <div class="v-sep-20"></div>
+    <button (click)="submit()" class="waves-effect waves-light btn create-event-form-btn deep-orange darken-4">Send your Set</button>
+  <div class="clear-both v-sep-20"></div>
+
 </form>
+<div class="v-sep-10" ></div>
+<div class="v-sep-20 tri-beige-b" ></div>
 
-<p> {{ feedback }} </p>
-<!-- <p>  feedback  </p> -->
+<div class="v-sep-20" ></div>
+<p class="feedback"> {{ feedback }} </p>
+<!-- <p class="feedback">  feedback  </p> -->

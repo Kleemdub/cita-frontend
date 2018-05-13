@@ -10,6 +10,7 @@ declare const $: any; // declare jquery type
 export class OpenEventComponent implements OnInit {
 
   events: Array<Event> = [];
+  wanted: Array<any> = [];
 
   constructor(
     public apiEvent: EventService
@@ -20,6 +21,9 @@ export class OpenEventComponent implements OnInit {
     this.apiEvent.getOpenEventList()
     .then((result: Array<Event>) => {
       this.events = result;
+      this.events.forEach((event: Event) => {
+        this.wanted.push(event.nbSelectas - event.registrations);
+      });
     })
     .catch((err) => {
       console.log('Phone list error');

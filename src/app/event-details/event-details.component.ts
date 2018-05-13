@@ -21,8 +21,9 @@ export class EventDetailsComponent implements OnInit {
   nbSelectas: number;
   nbRegistrations: number;
   currentEventStatus: string;
-
   joinInSelecta: Selecta = new Selecta();
+  wanted: number;
+  isSetOk: Array<any> = [];
 
   constructor(
     private reqTruc: ActivatedRoute,
@@ -49,7 +50,20 @@ export class EventDetailsComponent implements OnInit {
       this.nbRounds = this.event.nbRounds;
       this.nbSelectas = this.event.nbSelectas;
       this.nbRegistrations = this.event.registrations;
-      // console.log('Nombre de rounds : ' + this.nbRounds);
+      
+      this.wanted = this.event.nbSelectas - this.event.registrations;
+
+      this.event.rounds.forEach((oneRound) => {
+        for(let i = 0; i < oneRound.sets.length; i++) {
+          // console.log(oneRound.sets[i]._id);
+          if(oneRound.sets[i].selecta._id == this.userTruc.currentUser._id) {
+            this.isSetOk.push(true);
+            return;
+          }
+        }
+        this.isSetOk.push(false);
+      });
+      // console.log(this.isSetOk);
       
       this.currentEventStatus = this.event.status;
       if(this.currentEventStatus == "open") {

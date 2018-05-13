@@ -1,10 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { SetService } from '../api/set.service';
 import { UserService, LoginCredentials } from '../api/user.service';
-// import { FileSelectDirective } from 'ng2-file-upload';
 import { FileSelectDirective, FileUploader } from 'ng2-file-upload/ng2-file-upload';
-// import { FileUploader } from 'ng2-file-upload/file-upload/file-uploader.class';
 import { environment } from '../../environments/environment';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-set-create',
@@ -13,23 +12,38 @@ import { environment } from '../../environments/environment';
 })
 export class SetCreateComponent implements OnInit {
 
-  uploader: FileUploader = new FileUploader ({
-    url: `${environment.backendUrl}/api/upload`
-    // url: `https://api.mixcloud.com//upload/?access_token=HJtqWA6CCAHKvkhTsLfDntjjyvzBMuRE`
-    
-  });
-
   newSet = {
-    name: ''
+    name: '',
+    description: '',
+    nickname: ''
   };
 
+  roundId: string;
+  userId: string;
   feedback: string;
+  eventId: string;
+
+  uploader: FileUploader = new FileUploader ({
+    // url: `${environment.backendUrl}/api/upload`
+    url: `${environment.backendUrl}/api/upload/event/${this.eventId}/round/${this.roundId}/user/${this.userId}`
+  });
 
   constructor(
-    public apiSet: SetService
+    public apiSet: SetService,
+    public userTruc: UserService,
+    private reqTruc: ActivatedRoute,
+    private resTruc: Router
   ) { }
 
   ngOnInit() {
+    this.reqTruc.paramMap
+    .subscribe((myParams) => {
+      this.roundId = myParams.get('roundId');
+      this.eventId = myParams.get('eventId');
+    });
+
+    this.userId = this.userTruc.currentUser._id;
+
     this.uploader.onSuccessItem = (item, response) => {
       this.feedback = JSON.parse(response).message;
     };
@@ -48,15 +62,19 @@ export class SetCreateComponent implements OnInit {
   // }
 
   submit() {
+    
+    this.newSet.nickname = this.userTruc.currentUser.nickname;
     this.uploader.onBuildItemForm = (item, form) => {
       form.append('name', this.newSet.name);
-      // form.append('brand', this.newSet.name);
-      // form.append('specs', JSON.stringify(this.newSet.name));
-      // this.uploader.uploadItem(item);
+      form.append('description', this.newSet.description);
+      form.append('nickname', this.newSet.nickname);
+      item.url = `${environment.backendUrl}/api/upload/event/${this.eventId}/round/${this.roundId}/user/${this.userId}`;
     };
-
     this.uploader.uploadAll();
-    // this.uploader.uploadItem(item);
+
+    // console.log(this.eventId);
+    // console.log(this.roundId);
+    // console.log(this.userId);
   }
 
 }

@@ -12,3 +12,92 @@ body {
     font-family: 'Alegreya Sans', sans-serif;
     font-size: 16px;
 }
+
+.tri-red-h {
+    background-image: url('./assets/images/tri-red-h.png');
+    background-position: top center;
+    background-repeat: repeat-x;
+}
+
+.tri-red-b {
+    background-image: url('./assets/images/tri-red-b.png');
+    background-position: bottom center;
+    background-repeat: repeat-x;
+}
+
+.tri-brown-h {
+    background-image: url('./assets/images/tri-brown-h.png');
+    background-position: top center;
+    background-repeat: repeat-x;
+}
+
+.tri-brown-b {
+    background-image: url('./assets/images/tri-brown-b.png');
+    background-position: bottom center;
+    background-repeat: repeat-x;
+}
+
+.tri-beige-h {
+    background-image: url('./assets/images/tri-beige-h.png');
+    background-position: top center;
+    background-repeat: repeat-x;
+}
+
+.tri-beige-b {
+    background-image: url('./assets/images/tri-beige-b.png');
+    background-position: bottom center;
+    background-repeat: repeat-x;
+}
+
+.tri-grey-h {
+    background-image: url('./assets/images/tri-grey-h.png');
+    background-position: top center;
+    background-repeat: repeat-x;
+}
+
+.tri-grey-b {
+    background-image: url('./assets/images/tri-grey-b.png');
+    background-position: bottom center;
+    background-repeat: repeat-x;
+}
+
+.tri-white-h {
+    background-image: url('./assets/images/tri-white-h.png');
+    background-position: top center;
+    background-repeat: repeat-x;
+}
+
+.tri-white-b {
+    background-image: url('./assets/images/tri-white-b.png');
+    background-position: bottom center;
+    background-repeat: repeat-x;
+}
+
+.tri-white-h-transp {
+    background-image: url('./assets/images/tri-white-h.png');
+    background-position: top center;
+    background-repeat: repeat-x;
+    opacity: 0.5;
+}
+
+.tri-white-b-transp {
+    background-image: url('./assets/images/tri-white-b.png');
+    background-position: bottom center;
+    background-repeat: repeat-x;
+    opacity: 0.5;
+}
+
+.clear-both {
+    clear: both;
+}
+
+.v-sep-10 {
+    height:10px;
+}
+
+.v-sep-20 {
+    height:20px;
+}
+.v-sep-60 {
+    height:60px;
+}

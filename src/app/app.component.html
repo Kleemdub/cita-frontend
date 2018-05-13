@@ -11,73 +11,87 @@
         </div>
     </nav>
 </div> -->
+<header>
+    <div class="navbar-fixed">
+        <nav >
+            <div class="nav-wrapper">
+                <a routerLink="/" class="brand-logo">Champions in the Arena</a>
+                <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+                <ul class="right hide-on-med-and-down">
+                    <li><a >About Us</a></li>
+                    <li><a >Rules</a></li>
+                    <!-- <li><a href="#">User account</a></li> -->
+                    <li>
+                        <ul class="nav-user-link">
+                            <li *ngIf="!userTruc.currentUser"><a routerLink="/signup">Sign Up</a></li>
+                            <li *ngIf="!userTruc.currentUser"><a routerLink="/login">Log In</a></li>
+                            <li *ngIf="userTruc.currentUser"><a [routerLink]="['/user', userTruc.currentUser._id]">{{userTruc.currentUser.nickname}}</a></li>
+                            <li *ngIf="userTruc.currentUser"><a (click)="logoutClick()"><i class="material-icons">cancel</i></a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <!-- mobile nav  -->
+                <ul class="side-nav" id="mobile-demo">
+                    <li><a href="sass.html">Sass</a></li>
+                    <li><a href="badges.html">Components</a></li>
+                    <li><a href="#">User account</a></li>
+                    <li><a href="#">Log In</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+</header>
 
-<div class="navbar-fixed">
-    <nav >
-        <div class="nav-wrapper deep-orange darken-4">
-            <a routerLink="/" class="brand-logo">Champions in the Arena</a>
-            <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-            <ul class="right hide-on-med-and-down">
-                <li><a href="#">About Us</a></li>
-                <li><a href="#">Rules</a></li>
-                <!-- <li><a href="#">User account</a></li> -->
-                <li>
-                    <ul class="nav-user-link">
-                        <li *ngIf="!userTruc.currentUser"><a routerLink="/signup">Sign Up</a></li>
-                        <li *ngIf="!userTruc.currentUser"><a routerLink="/login">Log In</a></li>
-                        <li *ngIf="userTruc.currentUser"><a [routerLink]="['/user', userTruc.currentUser._id]">{{userTruc.currentUser.nickname}}</a></li>
-                        <li *ngIf="userTruc.currentUser"><a (click)="logoutClick()"><i class="material-icons">cancel</i></a></li>
-                    </ul>
-                </li>
-            </ul>
-            <!-- mobile nav  -->
-            <ul class="side-nav" id="mobile-demo">
-                <li><a href="sass.html">Sass</a></li>
-                <li><a href="badges.html">Components</a></li>
-                <li><a href="#">User account</a></li>
-                <li><a href="#">Log In</a></li>
-            </ul>
-        </div>
-    </nav>
-</div>
+<main>
+    <div class="row global-container">
+            <!-- Liens boutons  -->
+            <div id="colG" class="colG col s12 l2">
+                <!-- music-circle -->
+                <!-- <a *ngIf="userTruc.currentUser" [routerLink]="['/user', userTruc.currentUser._id]" class="user-btn btn-floating btn-large waves-effect waves-light deep-orange darken-4 tooltipped" id="btn-user-tool" data-position="right" data-tooltip="Your Account"><i class="material-icons">account_circle</i></a>
+                <a *ngIf="!userTruc.currentUser" routerLink="/login" class="user-btn btn-floating btn-large waves-effect waves-light deep-orange darken-4 tooltipped" id="btn-login-tool" data-position="right" data-tooltip="Your Account"><i class="material-icons">account_circle</i></a> -->
+                <a (click)="userRedirect()" class="user-btn btn-floating btn-large waves-effect waves-light deep-orange darken-4 tooltipped" id="btn-login-tool" data-position="right" data-tooltip="Manage Your Account"><i class="material-icons">account_circle</i></a>
+                <a routerLink="/event/create" class="create-btn btn-floating btn-large waves-effect waves-light deep-orange darken-4 tooltipped" data-position="right" data-tooltip="Create a New Sound Clash Event"><i class="material-icons">new_releases</i></a>
+                <a class="archives-btn btn-floating btn-large waves-effect waves-light tooltipped" data-position="right" data-tooltip="Sound Clash Archives"><i class="material-icons">layers</i></a>
+                <a class="tunes-btn btn-floating btn-large waves-effect waves-light tooltipped" data-position="right" data-tooltip="All the Tunes Played"><i class="material-icons">album</i></a>
+                <a class="message-btn btn-floating btn-large waves-effect waves-light brown darken-4 tooltipped" data-position="right" data-tooltip="Join the Chat Room"><i class="material-icons">message</i></a>
+                <a class="contact-btn btn-floating btn-large waves-effect waves-light brown darken-4 tooltipped" data-position="right" data-tooltip="Contact Us"><i class="material-icons">email</i></a>
+            </div>
+    
+            <!-- Contenu  -->
+            <div id="colM" class="colM col s12 l7">
+                <router-outlet></router-outlet>
+            </div>
+    
+            <!-- Aside  -->
+            <div id="colD" class="colD col s12 l3">
+    
+                <!-- <div class="ribbon">
+                    <div class="ribbon-stitches-top"></div>
+                    <strong class="ribbon-content"><h1>Coming Soon</h1></strong>
+                    <div class="ribbon-stitches-bottom"></div>
+                </div> -->
+    
+                <h3 class="brown-text text-darken-4"><i class="material-icons deep-orange-text text-darken-4">whatshot</i>Watch It!</h3>
+                <!-- <h3>Watch It!</h3> -->
+                <div class="aside-container"></div>
+                <div class="aside-container"></div>
+                <div class="aside-container"></div>
+            </div>
+    </div>
+</main>
 
-<div class="row global-container">
-        <!-- Liens boutons  -->
-        <div id="colG" class="colG col s12 l2">
-            <!-- music-circle -->
-            <!-- <a *ngIf="userTruc.currentUser" [routerLink]="['/user', userTruc.currentUser._id]" class="user-btn btn-floating btn-large waves-effect waves-light deep-orange darken-4 tooltipped" id="btn-user-tool" data-position="right" data-tooltip="Your Account"><i class="material-icons">account_circle</i></a>
-            <a *ngIf="!userTruc.currentUser" routerLink="/login" class="user-btn btn-floating btn-large waves-effect waves-light deep-orange darken-4 tooltipped" id="btn-login-tool" data-position="right" data-tooltip="Your Account"><i class="material-icons">account_circle</i></a> -->
-            <a (click)="userRedirect()" class="user-btn btn-floating btn-large waves-effect waves-light deep-orange darken-4 tooltipped" id="btn-login-tool" data-position="right" data-tooltip="Your Account"><i class="material-icons">account_circle</i></a>
-            <a routerLink="/event/create" class="create-btn btn-floating btn-large waves-effect waves-light deep-orange darken-4 tooltipped" data-position="right" data-tooltip="Create a New Sound Clash Event"><i class="material-icons">new_releases</i></a>
-            <a class="archives-btn btn-floating btn-large waves-effect waves-light deep-orange darken-4 tooltipped" data-position="right" data-tooltip="Sound Clash Archives"><i class="material-icons">layers</i></a>
-            <a class="tunes-btn btn-floating btn-large waves-effect waves-light deep-orange darken-4 tooltipped" data-position="right" data-tooltip="All the Tunes"><i class="material-icons">album</i></a>
-            <a class="contact-btn btn-floating btn-large waves-effect waves-light deep-orange darken-4 tooltipped" data-position="right" data-tooltip="Contact Us"><i class="material-icons">message</i></a>
-        </div>
+<div class="clear-both"></div>
 
-        <!-- Contenu  -->
-        <div id="colM" class="colM col s12 l7">
-            <router-outlet></router-outlet>
-        </div>
+<footer>
+    <div class="v-sep-60"></div><div class="v-sep-20"></div>
+    <!-- <div class="v-sep-20 tri-white-h-transp"></div> -->
 
-        <!-- Aside  -->
-        <div id="colD" class="colD col s12 l3">
+    <div class="footer-top"></div>
+    <div class="footer-bottom brown darken-4">
+        <p>Made by Clément Dubrisay at Ironhack - 2018</p>
+    </div>
 
-            <!-- <div class="ribbon">
-                <div class="ribbon-stitches-top"></div>
-                <strong class="ribbon-content"><h1>Coming Soon</h1></strong>
-                <div class="ribbon-stitches-bottom"></div>
-            </div> -->
-
-            <h3>Coming Soon</h3>
-            <div class="aside-container"></div>
-            <div class="aside-container"></div>
-            <div class="aside-container"></div>
-
-            <h3>Join In</h3>
-            <div class="aside-container"></div>
-            <div class="aside-container"></div>
-        </div>
-</div>
-
-
+    <!-- <div class="v-sep-20 tri-white-b-transp"></div> -->
+    <div class="v-sep-20"></div>
+</footer>
 

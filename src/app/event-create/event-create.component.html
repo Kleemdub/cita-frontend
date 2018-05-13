@@ -1,14 +1,14 @@
 
 <!-- <h2>{{userTruc.currentUser._id}}</h2> -->
 
-<h2>
-  <i class="material-icons">star</i>
-  <i class="material-icons">star</i>
-  <i class="material-icons">star</i>
+<h2 class="brown-text text-darken-4">
+  <i class="material-icons deep-orange-text text-darken-4">star</i>
+  <i class="material-icons deep-orange-text text-darken-4">star</i>
+  <i class="material-icons deep-orange-text text-darken-4">star</i>
   Create a Sound Clash Event
-  <i class="material-icons">star</i>
-  <i class="material-icons">star</i>
-  <i class="material-icons">star</i>
+  <i class="material-icons deep-orange-text text-darken-4">star</i>
+  <i class="material-icons deep-orange-text text-darken-4">star</i>
+  <i class="material-icons deep-orange-text text-darken-4">star</i>
 </h2>
 
 <form>
@@ -82,9 +82,10 @@
       <h3>Duration : {{round2.duration}}</h3>
   </div> -->
 
-  <div class="clear-both v-sep-20"></div>
+  <div class="clear-both v-sep-20" ></div>
 
   <div *ngIf="newEvent.nbRounds == 1 || newEvent.nbRounds == 2 || newEvent.nbRounds == 3">
+    <div class=" v-sep-20 tri-brown-h" ></div>
     <div class="round-section">
       <h4>Round 1</h4>
   
@@ -177,10 +178,18 @@
       </div>
 
       <div class="clear-both"></div>
+      
     </div>
+    <div class="clear-both v-sep-20 tri-brown-b" ></div>
   </div>
 
   <div *ngIf="newEvent.nbRounds == 2 || newEvent.nbRounds == 3">
+    <div class=" v-sep-20" ></div>
+    <div class=" v-sep-20" ></div>
+  </div>
+
+  <div *ngIf="newEvent.nbRounds == 2 || newEvent.nbRounds == 3">
+    <div class=" v-sep-20 tri-beige-h" ></div>
     <div class="round-section">
       <h4>Round 2</h4>
   
@@ -269,9 +278,16 @@
 
       <div class="clear-both"></div>
     </div>
+    <div class="v-sep-20 tri-beige-b" ></div>
+  </div>
+
+  <div *ngIf="newEvent.nbRounds == 3" >
+    <div class=" v-sep-20" ></div>
+    <div class=" v-sep-20" ></div>
   </div>
 
   <div *ngIf="newEvent.nbRounds == 3">
+    <div class=" v-sep-20 tri-brown-h" ></div>
     <div class="round-section">
       <h4>Final Round</h4>
   
@@ -360,9 +376,11 @@
 
       <div class="clear-both"></div>
     </div>
+    <div class=" v-sep-20 tri-brown-b" ></div>
   </div>
 
-  <!-- <div class="clear-both v-sep-20"></div> -->
+  <div class=" v-sep-20" ></div>
+  <div class=" v-sep-20" ></div>
 
   <div *ngIf="newEvent.nbSelectas && newEvent.nbRounds">
     <button (click)="submitCreateEvent()" class="waves-effect waves-light btn create-event-form-btn deep-orange darken-4">Create this Event</button>

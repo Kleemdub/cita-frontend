@@ -5,15 +5,48 @@
 
 /* NAV **************************************************************************** */
 /********************************************************************************* */
-.nav-wrapper {
+.navbar-fixed .nav-wrapper {
     padding-right:60px;
+    /* background-color: #204d72; */
+    background: transparent;
+    /* background-image: url('../assets/images/craft-paper-bande.png');
+    background-repeat: repeat-x;
+    background-position: bottom; */
+    background-image: url('../assets/images/craft-paper-bande-3.png');
+    background-repeat: repeat-x;
+    background-position: bottom; 
+}
+.navbar-fixed {
+    height:105px;
+}
+.navbar-fixed .nav-wrapper {
+    height:105px;
+}
+
+nav {
+    box-shadow: 0px 0px 0px rgba(255, 255, 255, 0);
+    background: transparent;
 }
 
 .nav-wrapper a {
     padding-left: 15px;
     padding-right: 15px;
+    /* margin-left: 15px;
+    margin-right: 15px; */
     font-size: 1.2em;
     font-weight:300;
+    height:90px;
+    /* box-sizing: border-box; */
+}
+
+.nav-wrapper a:hover {
+    /* background-color: rgba(87, 65, 34, 0.15); */
+    background-color: #bf360c; 
+    background-image: url('../assets/images/red-ribbon-2.png');
+    background-position: top left;
+    background-repeat: repeat-x;
+    box-shadow:0px 3px 8px rgba(0, 0, 0, 0.3);
+    /* border-bottom: 8px solid #dcccb5; */
 }
 
 .nav-wrapper .nav-user-link {
@@ -31,7 +64,7 @@
 .global-container {
     /* background:#ccc; */
     width:auto;
-    padding-top:50px;
+    padding-top:5px;
 }
 
 /* COLONNE GAUCHE ***************************************************************** */
@@ -65,6 +98,7 @@
     position: fixed;
     left:70px;
     top:258px;
+    background-color: #a99473;
 }
 
 .global-container .colG .tunes-btn {
@@ -73,6 +107,15 @@
     position: fixed;
     left:70px;
     top:328px;
+    background-color: #a99473;
+}
+
+.global-container .colG .message-btn {
+    margin:0;
+    padding:0;
+    position: fixed;
+    left:70px;
+    top:398px;
 }
 
 .global-container .colG .contact-btn {
@@ -80,7 +123,7 @@
     padding:0;
     position: fixed;
     left:70px;
-    top:398px;
+    top:468px;
 }
 
 .global-container .colG .btn-floating i {
@@ -100,7 +143,7 @@
 /********************************************************************************* */
 .global-container .colD {
     /* background: #00f; */
-    height:300px;
+    /* height:300px; */
 }
 
 .global-container .colD h3 {
@@ -109,15 +152,26 @@
     color:#bf360c;
     font-size:2rem;
     padding-bottom:15px;
-    text-align: center;
+    text-align: left;
     width:80%;
+    height:47px;
+    overflow: hidden;
+    
+}
+
+.global-container .colD h3 i {
+    font-size:2rem;
+    float: left;
+    padding:0;
+    margin:0; 
+    padding-right: 7px;
 }
 
 .global-container .colD .aside-container {
-    height: 100px;
+    height: 200px;
     width:80%;
     background-color: #ccc;
-    margin-bottom:15px;
+    margin-bottom:25px;
 }
 
 
@@ -137,81 +191,32 @@
 
 }
 
-/* .ribbon {
-    width: 297px;
-    position: absolute;
+
+/* FOOTER ************************************************************************* */
+/********************************************************************************* */
+footer {
+    width:auto;
+    margin-top:70px;
+    height:360px;
+    background-image: url('../assets/images/craft-paper-footer.png');
+    background-repeat: repeat-x;
+    background-position: top;
+    overflow: hidden;
+}
+
+footer .footer-top {
+    width:auto;
+    height:230px;
+    /* background-image: url('../assets/images/craft-paper-bande-bottom.png'); */
+    background-repeat: repeat-x;
+    background-position: top;
+}
+
+footer .footer-bottom {
+    width:auto;
+    height:55px;
+    /* opacity: 0.75; */
     text-align: center;
-    font-size: 17px!important;
-    background: #bf360c;
-    background: -webkit-gradient(linear, left top, left bottom, from(#bf360c), to(#bf360c));
-    background: -webkit-linear-gradient(top, #bf360c, #bf360c);
-    background: -moz-linear-gradient(top, #bf360c, #bf360c);
-    background: -ms-linear-gradient(top, #bf360c, #bf360c);
-    background: -o-linear-gradient(top, #bf360c, #bf360c);
-    background-image: -ms-linear-gradient(top, #bf360c 0%, #bf360c 100%);
-    -webkit-box-shadow: rgba(000,000,000,0.3) 0 1px 1px;
-    -moz-box-shadow: rgba(000,000,000,0.3) 0 1px 1px;
-    box-shadow: rgba(000,000,000,0.3) 0 1px 1px;
-    font-family: 'Helvetica Neue',Helvetica, sans-serif;
-    }
- .ribbon h1 {
-    font-size: 24px!important;
-    color: #ffffff;
-    text-shadow: #5c1b07 0 1px 0;
-    margin:0px;
-    padding: 15px 10px;
-    }
- .ribbon:before, .ribbon:after {
-    content: '';
-    position: absolute;
-    display: block;
-    bottom: -1em;
-    border: 1.5em solid #963112;
-    z-index: -1;
-    }
- .ribbon:before {
-    left: -2em;
-    border-right-width: 1.5em;
-    border-left-color: transparent;
-    -webkit-box-shadow: rgba(000,000,000,0.4) 1px 1px 1px;
-    -moz-box-shadow: rgba(000,000,000,0.4) 1px 1px 1px;
-    box-shadow: rgba(000,000,000,0.4) 1px 1px 1px;
-    }
- .ribbon:after {
-    right: -2em;
-    border-left-width: 1.5em;
-    border-right-color: transparent;
-    -webkit-box-shadow: rgba(000,000,000,0.4) -1px 1px 1px;
-    -moz-box-shadow: rgba(000,000,000,0.4) -1px 1px 1px;
-    box-shadow: rgba(000,000,000,0.4) -1px 1px 1px;
-    }
- .ribbon .ribbon-content:before, .ribbon .ribbon-content:after {
-    border-color: #611e0a transparent transparent transparent;
-    position: absolute;
-    display: block;
-    border-style: solid;
-    bottom: -1em;
-    content: '';
-    }
- .ribbon .ribbon-content:before {
-    left: 0;
-    border-width: 1em 0 0 1em;
-    }
- .ribbon .ribbon-content:after {
-    right: 0;
-    border-width: 1em 1em 0 0;
-    }
- .ribbon-stitches-top {
-    margin-top:2px;
-    border-top: 1px dashed rgba(0, 0, 0, 0.2);
-    -moz-box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.5);
-    -webkit-box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.5);
-    box-shadow: 0px 0px 2px rgba(255, 255, 255, 0.5);
-    }
- .ribbon-stitches-bottom {
-    margin-bottom:2px;
-    border-top: 1px dashed rgba(0, 0, 0, 0.2);
-    -moz-box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.3);
-    -webkit-box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.3);
-    box-shadow: 0px 0px 2px rgba(255, 255, 255, 0.3);
-    } */
+    color:#fff;
+    padding-top:15px;
+}

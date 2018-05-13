@@ -21,7 +21,7 @@ const routes: Routes = [
 
   { path: 'event/:eventId', component: EventDetailsComponent },
 
-  { path: 'set/round/:roundId/user/:userId', component: SetCreateComponent }
+  { path: 'set/event/:eventId/round/:roundId/user/:userId', component: SetCreateComponent }
 
 
   // { path: 'phones', component: PhoneListComponent },

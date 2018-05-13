@@ -1,42 +1,125 @@
-<h2>Sound Clash Event</h2>
+<h2 class="brown-text text-darken-4">
+    <i class="material-icons deep-orange-text text-darken-4">star</i>
+    <i class="material-icons deep-orange-text text-darken-4">star</i>
+    <i class="material-icons deep-orange-text text-darken-4">star</i>
+    Sound Clash Event
+    <i class="material-icons deep-orange-text text-darken-4">star</i>
+    <i class="material-icons deep-orange-text text-darken-4">star</i>
+    <i class="material-icons deep-orange-text text-darken-4">star</i>
+</h2>
 
-<!-- <h3>{{event?.admin.nicknamne}}</h3> -->
+<div class="event-info-section">
 
-<h3>{{event?.admin.nickname}}</h3>
+  <div class="v-sep-20 tri-beige-h"></div>
+  <div class="v-sep-20"></div>
+  
+  <h5>Admin: <b>{{event?.admin.nickname}}</b></h5>
+  <div class="v-sep-10"></div>
+  
+  <ul class="selectas-list">
+    <li><p>Lineup:</p></li>
+    <li *ngFor="let oneSelecta of event?.selectas, let last = last">
+      <p *ngIf="!last"><b>{{oneSelecta.nickname}}</b><span class="selecta-sep">/</span></p>
+      <p *ngIf="last"><b>{{oneSelecta.nickname}}</b></p>
+    </li>
+  </ul>
+  <div class="clear-both"></div>
+  
+  <ul class="genres-list">
+    <li><p>Genres tags: </p></li>
+    <li *ngFor="let oneTag of event?.tags">
+      <p class="genre-tag">{{oneTag}}</p>
+    </li>
+  </ul>
+  <div class="clear-both"></div>
+  
+  <ul class="rounds-list">
+    <li *ngFor="let oneRound of event?.rounds">
+  
+      <h5 *ngIf="!oneRound.isFinal" >Round {{oneRound.roundNumber}}</h5>
+      <h5 *ngIf="oneRound.isFinal" >Final Round</h5>
+  
+      <p class="round-genre-tag">{{oneRound.genres}}</p>
+      <p class="round-style-tag">{{oneRound.style}}</p>
+    </li>
+    <div class="v-sep-10 clear-both"></div>
+  </ul>
 
-<ul>
-  <li *ngFor="let oneTag of event?.tags">
-    <p>{{oneTag}}</p>
-  </li>
-</ul>
+  <div *ngIf="isAnybody && isOpen" >
+    <div class="v-sep-20"></div>
+    <button (click)="joinClick()" class="waves-effect waves-light btn create-event-form-btn deep-orange darken-4">Come ina the Arena, Selecta!</button>
+    <div class="clear-both v-sep-20"></div>
+  </div>
 
-<ul>
-  <li *ngFor="let oneRound of event?.rounds">
+  <div class="wanted">
+    <p *ngIf="wanted == 1">
+        WANTED <br/>
+        {{wanted}} MORE <br/>
+        SELECTA
+    </p>
+    <p *ngIf="wanted == 0">
+        LINE UP <br/>
+        COMPLETE <br/>
+        !!!
+    </p>
+    <p *ngIf="wanted != 1 && wanted != 0">
+        WANTED <br/>
+        {{wanted}} MORE <br/>
+        SELECTAS
+    </p>
+  </div>
 
-    <h4 *ngIf="!oneRound.isFinal" >Round {{oneRound.roundNumber}}</h4>
-    <h4 *ngIf="oneRound.isFinal" >Final Round</h4>
+  <div class="clear-both"></div>
+  <!-- <div class="v-sep-10"></div> -->
+  <div class="v-sep-20 tri-beige-b"></div>
 
-    <p>{{oneRound.genres}} / {{oneRound.style}}</p>
-  </li>
-</ul>
-
-<div *ngIf="isAnybody && isOpen" >
-  <!-- <a href="#">Join in</a> -->
-  <button (click)="joinClick()">Join in</button>
 </div>
 
-<div *ngIf="isCurrentAdmin" >
+<div class="v-sep-20"></div>
+<div class="v-sep-20"></div>
+
+<!-- <div *ngIf="isCurrentAdmin" class="event-info-section" >
   <p>Admin content</p>
-</div>
+</div> -->
 
-<div *ngIf="isParticipant" >
-    <p>Participant content</p>
+<div *ngIf="isParticipant || isCurrentAdmin">
 
-    <div *ngFor="let oneRound of event?.rounds">
-      
-      <a *ngIf="!oneRound.isFinal"  [routerLink]="['/set/round', oneRound._id, 'user', userTruc.currentUser._id]" >Create your set for Round {{oneRound.roundNumber}}</a>
-      <a *ngIf="oneRound.isFinal" [routerLink]="['/set/round', oneRound._id, 'user', userTruc.currentUser._id]" >Create your Set for the Final Round</a>
-      
+  <div class="v-sep-20 tri-brown-h"></div>
+  <div class="v-sep-10"></div>
+
+  <div class="event-manage-section">
+    <h5>Your are registred for this event</h5>
+    <div class="v-sep-10"></div>
+  
+    <div *ngFor="let oneRound of event?.rounds, let pos = index">
+      <div  *ngIf="!isSetOk[pos]">
+        <div *ngIf="!oneRound.isFinal">
+          <i class="material-icons deep-orange-text text-darken-4">album</i>
+          <a [routerLink]="['/set/event', eventId, 'round', pos, 'user', userTruc.currentUser._id]">Send your Set for Round {{oneRound.roundNumber}}</a>
+          <div class="clear-both"></div>
+        </div>
+        <div *ngIf="oneRound.isFinal">
+          <i class="material-icons deep-orange-text text-darken-4">album</i>
+          <a [routerLink]="['/set/event', eventId, 'round', pos, 'user', userTruc.currentUser._id]">Send your Set for the Final Round</a>
+          <div class="clear-both"></div>
+        </div>
+      </div>
+      <div  *ngIf="isSetOk[pos]">
+        <div *ngIf="!oneRound.isFinal">
+          <i class="material-icons light-green-text text-accent-4">check</i>
+          <p>Your set for Round {{oneRound.roundNumber}} is done.</p>
+          <div class="clear-both"></div>
+        </div>
+        <div *ngIf="oneRound.isFinal">
+          <i class="material-icons light-green-text text-accent-4">check</i>
+          <p>Your set for the Final Round is done.</p>
+          <div class="clear-both"></div>
+        </div>
+      </div>
     </div>
+  </div>
+
+  <div class="v-sep-10"></div>
+  <div class="v-sep-20 tri-brown-b"></div>
 
 </div>

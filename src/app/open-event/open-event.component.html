@@ -1,29 +1,83 @@
 
 <div class="now-section">
 
-  <h2>Join the next Sound Clash</h2>
-  
-  <ul>
-      <li *ngFor="let OneEvent of events">
-          <div [routerLink]="['/event', OneEvent._id]" class="now-section-box">
-              
-            <h3>Upcoming Event</h3>
+    <div class="v-sep-20"></div>
+    <div class="tri-brown-h v-sep-20"></div>
 
-              <ul class="selectas-list">
-                  <li *ngFor="let OneSelecta of OneEvent.selectas, let last = last">
-                      <p *ngIf="!last">
-                          {{OneSelecta.nickname | uppercase}}
-                          <br/>
-                          <span class="txt-vs deep-orange-text text-darken-4">VS</span>
-                      </p>
-                      <p *ngIf="last">
-                          {{OneSelecta.nickname | uppercase}}
-                      </p>
-                  </li>
-              </ul>
-              
-          </div>
-      </li>
-  </ul>
+    <h2 class="brown-text text-darken-4">
+            <i class="material-icons deep-orange-text text-darken-4">flash_on</i>
+            <span class="h2-inner">Join the next Sound Clash</span>
+            <i class="material-icons deep-orange-text text-darken-4">flash_on</i>
+    </h2>
+    
+    <ul class="row">
+        <li *ngFor="let OneEvent of events, let isEven = even, let pos = index" class="col s12 l6">
+
+            <div *ngIf="!isEven" class="col-odd">
+                <div [routerLink]="['/event', OneEvent._id]" class="now-section-box">
+                    <h3 class="brown darken-4">Upcoming Event</h3>
+                    <div class="section-box-inner">
+                        <ul class="selectas-list">
+                            <li *ngFor="let OneSelecta of OneEvent.selectas, let last = last">
+                                <p *ngIf="OneSelecta._id == OneEvent.admin._id">
+                                        <b>{{OneSelecta.nickname | uppercase}}</b>
+                                </p>
+                                <p *ngIf="OneSelecta._id != OneEvent.admin._id">
+                                    {{OneSelecta.nickname | uppercase}}
+                                </p>
+                            </li>
+                        </ul>
+                        <div class="wanted">
+                            <p *ngIf="wanted[pos] == 1">
+                                WANTED <br/>
+                                {{wanted[pos]}} MORE <br/>
+                                SELECTA
+                            </p>
+                            <p *ngIf="wanted[pos] != 1">
+                                WANTED <br/>
+                                {{wanted[pos]}} MORE <br/>
+                                SELECTAS
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div *ngIf="isEven" class="col-even">
+                <div [routerLink]="['/event', OneEvent._id]" class="now-section-box">
+                    <h3 class="brown darken-4">Upcoming Event</h3>
+                    <div class="section-box-inner">
+                        <ul class="selectas-list">
+                            <li *ngFor="let OneSelecta of OneEvent.selectas, let last = last">
+                                <p *ngIf="OneSelecta._id == OneEvent.admin._id">
+                                        <b>{{OneSelecta.nickname | uppercase}}</b>
+                                </p>
+                                <p *ngIf="OneSelecta._id != OneEvent.admin._id">
+                                    {{OneSelecta.nickname | uppercase}}
+                                </p>
+                            </li>
+                        </ul>
+                        <div class="wanted">
+                            <p *ngIf="wanted[pos] == 1">
+                                WANTED <br/>
+                                {{wanted[pos]}} MORE <br/>
+                                SELECTA
+                            </p>
+                            <p *ngIf="wanted[pos] != 1">
+                                WANTED <br/>
+                                {{wanted[pos]}} MORE <br/>
+                                SELECTAS
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </li>
+        <div class="clear-both"></div>
+    </ul>
+
+    <div class="v-sep-20"></div>
+    <div class="tri-brown-b v-sep-20"></div>
   
 </div>

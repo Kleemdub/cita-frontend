@@ -1,0 +1,143 @@
+* {
+    margin:0;
+    padding:0;
+}
+
+.event-info-section {
+    position: relative;
+}
+
+h2 {
+    color: #bf360c;
+    text-align: center;
+    font-family: 'Kadwa', serif;
+    font-size:2rem;
+    margin-bottom:15px;
+    /* background: #0f0; */
+    height:33px;
+}
+
+.selectas-list li {
+    float: left;
+    margin-right:10px;
+}
+
+.selecta-sep {
+    /* padding-right: 7px; */
+    padding-left: 10px;
+    color:#a99473;
+}
+
+.genres-list, .rounds-list {
+    margin-top:15px;
+}
+
+.genres-list li {
+    float: left;
+    margin-right:10px;
+}
+
+.genres-list li .genre-tag {
+    background-color: #a99473;
+    border-radius: 5px;
+    padding-left:7px;
+    padding-right: 7px;
+    color:#fff;
+}
+
+.rounds-list li {
+    clear: both;
+    height: 35px;
+}
+
+.rounds-list h5 {
+    float: left;
+    margin-right:10px;
+}
+
+.rounds-list .round-genre-tag {
+    float: left;
+    margin-right:10px;
+    background-color: #bf360c;
+    border-radius: 5px;
+    padding-left:7px;
+    padding-right: 7px;
+    color:#fff;
+}
+
+.rounds-list .round-style-tag {
+    float: left;
+    margin-right:10px;
+    background-color: #5d4037;
+    border-radius: 5px;
+    padding-left:7px;
+    padding-right: 7px;
+    color:#fff;
+}
+
+.wanted {
+    /* background: #bf360c; */
+    background: url('../../assets/images/pastille.png');
+    color: #fff;
+    position: absolute;
+    width:120px;
+    height:120px;
+    right:0px;
+    top:40px;
+    transform: rotate(20deg);
+}
+
+.wanted p {
+    text-align: center;
+    font-size: 1rem;
+    line-height: 1.3rem;
+    padding-top:30px;
+}
+
+.create-event-form-btn {
+    padding-left:30px;
+    padding-right:30px;
+    /* float: right; */
+    /* display: block; */
+    border-radius: 20px;
+    height: 42px;
+    padding-top: 3px;
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.create-event-form-btn:hover {
+    box-shadow: 0px 8px 10px rgba(0, 0, 0, 0.281);
+    background: rgb(214,119,79); /* Old browsers */
+    background: -moz-linear-gradient(top, rgba(214,119,79,1) 0%, rgba(191,54,12,1) 35%, rgba(191,54,12,1) 72%, rgba(135,42,0,1) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, rgba(214,119,79,1) 0%,rgba(191,54,12,1) 35%,rgba(191,54,12,1) 72%,rgba(135,42,0,1) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, rgba(214,119,79,1) 0%,rgba(191,54,12,1) 35%,rgba(191,54,12,1) 72%,rgba(135,42,0,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d6774f', endColorstr='#872a00',GradientType=0 );
+}
+
+.event-manage-section {
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.04);
+    margin-bottom:0px;
+    padding:20px;
+}
+
+.event-manage-section a {
+    color:#5d4037;
+    float: left;
+}
+.event-manage-section a:hover {
+    color:#bf360c;
+}
+
+.event-manage-section p {
+    /* color:#bf360c; */
+    float: left;
+    color:#a99473;
+}
+
+.event-manage-section i {
+    font-size:1.4rem;
+    margin-right: 5px;
+    float: left;
+    padding-top:2px;
+}

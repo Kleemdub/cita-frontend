@@ -29,7 +29,7 @@ h2 {
     /* margin-right:40px; */
 }
 
-.clear-both {
+/* .clear-both {
     clear: both;
 }
 
@@ -42,7 +42,7 @@ h2 {
 }
 .v-sep-60 {
     height:60px;
-}
+} */
 
 /* mz-checkbox-container .checkbox-field .checkbox-green[type="checkbox"] + label:before{
     border: 1px solid #aaa;
@@ -63,10 +63,26 @@ h2 {
 
 .round-section {
     background-color: rgba(0, 0, 0, 0.04);
-    margin-bottom:50px;
+    margin-bottom:0px;
+    padding:20px;
 }
 
 .create-event-form-btn {
-    padding-left:20px;
-    padding-right:20px;
+    padding-left:30px;
+    padding-right:30px;
+    float: right;
+    /* display: block; */
+    border-radius: 20px;
+    height: 42px;
+    padding-top: 3px;
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.create-event-form-btn:hover {
+    box-shadow: 0px 8px 10px rgba(0, 0, 0, 0.281);
+    background: rgb(214,119,79); /* Old browsers */
+    background: -moz-linear-gradient(top, rgba(214,119,79,1) 0%, rgba(191,54,12,1) 35%, rgba(191,54,12,1) 72%, rgba(135,42,0,1) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, rgba(214,119,79,1) 0%,rgba(191,54,12,1) 35%,rgba(191,54,12,1) 72%,rgba(135,42,0,1) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, rgba(214,119,79,1) 0%,rgba(191,54,12,1) 35%,rgba(191,54,12,1) 72%,rgba(135,42,0,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d6774f', endColorstr='#872a00',GradientType=0 );
 }

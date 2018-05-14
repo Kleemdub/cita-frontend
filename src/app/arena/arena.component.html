@@ -1,0 +1,51 @@
+<div class="now-section">
+    <h2 class="brown-text text-darken-4">
+        <i class="material-icons deep-orange-text text-darken-4">star</i>
+        <i class="material-icons deep-orange-text text-darken-4">star</i>
+        <i class="material-icons deep-orange-text text-darken-4">star</i>
+        Welcome ina the Arena
+        <i class="material-icons deep-orange-text text-darken-4">star</i>
+        <i class="material-icons deep-orange-text text-darken-4">star</i>
+        <i class="material-icons deep-orange-text text-darken-4">star</i>
+    </h2>
+    <ul>
+        <li *ngFor="let OneEvent of events">
+            <div class="now-section-box" >
+                <div class="now-section-header">
+                    <div class="now-section-header-inner">
+                        <h3>{{OneEvent.title}}</h3>
+                    </div>
+                </div>
+
+                <div class="rounds-display-section">
+
+                  <ul>
+                    <li *ngFor="let oneRound of OneEvent.rounds">
+                      <div *ngIf="oneRound.status == 'displayed'">
+  
+                        <h3>Round {{oneRound.roundNumber}}</h3>
+                        <ul>
+                          <li *ngFor="let oneSet of oneRound.sets,n let pos = index">
+                            <div class="v-sep-20 tri-beige-h"></div>
+                            <h5>{{oneSet.selecta.nickname}}</h5>
+                            <!-- <p>{{pos}}</p>
+                            {{setHtml[pos]}} -->
+                            <div class="widget-title-container" [innerHTML]="setHtml[pos] | safeHtml"></div>
+                            <div class="v-sep-20 tri-beige-b"></div>
+                            <div class="v-sep-20"></div>
+                          </li>
+                        </ul>
+                      </div>
+                    </li>
+                  </ul>
+
+                </div>
+
+
+            </div>
+        </li>
+    </ul>
+
+    <div class="ribbon ribbon-g"></div>
+    <div class="ribbon ribbon-d"></div>
+</div>

@@ -7,6 +7,7 @@ import { EventCreateComponent } from './event-create/event-create.component';
 import { UserAccountComponent } from './user-account/user-account.component';
 import { EventDetailsComponent } from './event-details/event-details.component';
 import { SetCreateComponent } from './set-create/set-create.component';
+import { ArenaComponent } from './arena/arena.component';
 
 const routes: Routes = [
   { path: '', component: HomePageComponent },
@@ -14,6 +15,8 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
 
   { path: 'signup', component: SignupComponent },
+
+  { path: 'arena', component: ArenaComponent },
 
   { path: 'user/:userId', component: UserAccountComponent },
 

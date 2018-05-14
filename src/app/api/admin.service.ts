@@ -17,6 +17,13 @@ export class AdminService {
     .toPromise();
   }
 
+  // GET /api/selectas/:selectaId/events
+  getSelectaEventList(selectaId) {
+    return this.ajaxEngine
+    .get(`${environment.backendUrl}/api/selectas/${selectaId}/events`)
+    .toPromise();
+  }
+
 }
 
 export class Event {
@@ -25,6 +32,7 @@ export class Event {
   admin: any;
   tags: Array<string> = [];
   nbSelectas: number;
+  registrations: number;
   selectas: Array<any> = [];
   nbRounds: number;
   // rounds: Array<any> = [ {}, {}, {} ];

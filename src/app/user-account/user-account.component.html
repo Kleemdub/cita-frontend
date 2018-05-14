@@ -7,7 +7,7 @@
     <li *ngFor="let OneEvent of events">
         <div class="now-section-box">
             <h4>Admin: {{OneEvent.admin.nickname}}</h4>
-            <!-- <p>Status: {{OneEvent.status}}</p> -->
+            <p>Status: {{OneEvent.status}}</p>
             <p *ngIf="OneEvent.status == 'open'">
               This event is still open to registrations
             </p>
@@ -23,7 +23,29 @@
     </li>
 </ul>
 
-<div *ngIf="events == ''">
+<ul *ngIf="selectaEvents != ''" >
+        <h3>You are registred for these Events:</h3>
+      
+          <li *ngFor="let OneEvent of selectaEvents">
+              <div class="now-section-box">
+                  <h4>Admin: {{OneEvent.admin.nickname}}</h4>
+                  <p>Status: {{OneEvent.status}}</p>
+                  <p *ngIf="OneEvent.status == 'open'">
+                    This event is still open to registrations
+                  </p>
+                  <p>Needed number of selectas: {{OneEvent.nbSelectas}}</p>
+                  <p>Registred selectas:</p>
+                  <ul class="selectas-list">
+                      <li *ngFor="let OneSelecta of OneEvent.selectas">
+                          {{OneSelecta.nickname | uppercase}}
+                      </li>
+                  </ul>
+                  <a [routerLink]="['/event', OneEvent._id]" >More Infos</a>
+              </div>
+          </li>
+      </ul>
+
+<div *ngIf="events == '' && selectaEvents == ''">
     <h3>You actually don't participate to any Event</h3>
 </div>
 

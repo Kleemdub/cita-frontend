@@ -78,10 +78,6 @@
 <div class="v-sep-20"></div>
 <div class="v-sep-20"></div>
 
-<!-- <div *ngIf="isCurrentAdmin" class="event-info-section" >
-  <p>Admin content</p>
-</div> -->
-
 <div *ngIf="isParticipant || isCurrentAdmin">
 
   <div class="v-sep-20 tri-brown-h"></div>
@@ -122,4 +118,21 @@
   <div class="v-sep-10"></div>
   <div class="v-sep-20 tri-brown-b"></div>
 
+</div>
+
+<div class="v-sep-20"></div>
+<div class="v-sep-20"></div>
+
+<div *ngIf="isCurrentAdmin" class="event-info-section" >
+  <div class="v-sep-20 tri-red-h"></div>
+  <div class="v-sep-20"></div>
+
+  <h5>Ready Yu Ready? Send dis ya event fi display!</h5>
+  <div class="v-sep-20"></div>
+
+  <button (click)="launchClick(event?._id)" class="waves-effect waves-light btn create-event-form-btn deep-orange darken-4">Launch this Event</button>
+
+  <div class="v-sep-10"></div>
+  <div class="v-sep-20"></div>
+  <div class="v-sep-20 tri-red-h"></div>
 </div>

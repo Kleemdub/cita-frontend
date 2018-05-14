@@ -48,6 +48,13 @@ export class EventService {
     .toPromise();
   }
 
+  // PUT /api/events/launch/:eventId
+  launchEvent(eventId: any, count: string) {
+    return this.ajaxEngine
+    .put(`${environment.backendUrl}/api/events/launch/${eventId}`, count)
+    .toPromise();
+  }
+
 }
 
 export class Selecta {

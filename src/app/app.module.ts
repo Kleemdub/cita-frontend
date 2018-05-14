@@ -1,4 +1,4 @@
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule, DomSanitizer } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -22,6 +22,8 @@ import { SetCreateComponent } from './set-create/set-create.component';
 import { SetService } from './api/set.service';
 // import { FileSelectDirective } from 'ng2-file-upload';
 import { FileSelectDirective, FileDropDirective, FileUploader } from 'ng2-file-upload/ng2-file-upload';
+import { ArenaComponent } from './arena/arena.component';
+import { SafeHtmlPipe } from './pipes/safe-html.pipe';
 
 
 @NgModule({
@@ -35,7 +37,9 @@ import { FileSelectDirective, FileDropDirective, FileUploader } from 'ng2-file-u
     UserAccountComponent,
     EventDetailsComponent,
     SetCreateComponent,
-    FileSelectDirective
+    FileSelectDirective,
+    ArenaComponent,
+    SafeHtmlPipe
 
   ],
   imports: [

@@ -104,7 +104,7 @@ export class EventDetailsComponent implements OnInit {
     });
   }
 
-    joinClick() {
+  joinClick() {
     // const { name } = this.event;
     const isOkay = confirm(`Are you sure you want to participate to this event?`);
 
@@ -122,6 +122,20 @@ export class EventDetailsComponent implements OnInit {
     .then((result) => {
       console.log(result);
       this.resTruc.navigateByUrl(`/event/${this.eventId}`);
+    })
+    .catch((err) => {
+      console.log('Phone delete error');
+      console.log(err);
+    });
+  }
+
+  launchClick(currentEventId) {
+    console.log(currentEventId);
+
+    this.apiEvent.launchEvent(currentEventId, '')
+    .then((result) => {
+      console.log(result);
+      this.resTruc.navigateByUrl(`/`);
     })
     .catch((err) => {
       console.log('Phone delete error');

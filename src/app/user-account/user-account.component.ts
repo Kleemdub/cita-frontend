@@ -12,6 +12,7 @@ import { Router } from '@angular/router';
 export class UserAccountComponent implements OnInit {
 
   events: Array<Event> = [];
+  selectaEvents: Array<Event> = [];
 
   constructor(
     public userTruc: UserService,
@@ -22,9 +23,20 @@ export class UserAccountComponent implements OnInit {
 
   ngOnInit() {
     const adminId = this.userTruc.currentUser._id;
+    const selectaId = this.userTruc.currentUser._id;
+
     this.apiAdmins.getAdminEventList(adminId)
     .then((result: Array<Event>) => {
       this.events = result;
+    })
+    .catch((err) => {
+      console.log('Admin Event list error');
+      console.log(err);
+    });
+
+    this.apiAdmins.getSelectaEventList(selectaId)
+    .then((result: Array<Event>) => {
+      this.selectaEvents = result;
     })
     .catch((err) => {
       console.log('Admin Event list error');

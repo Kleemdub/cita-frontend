@@ -24,6 +24,7 @@ import { SetService } from './api/set.service';
 import { FileSelectDirective, FileDropDirective, FileUploader } from 'ng2-file-upload/ng2-file-upload';
 import { ArenaComponent } from './arena/arena.component';
 import { SafeHtmlPipe } from './pipes/safe-html.pipe';
+import { GameService } from './api/game.service';
 
 
 @NgModule({
@@ -57,7 +58,8 @@ import { SafeHtmlPipe } from './pipes/safe-html.pipe';
     EventService,
     UserService,
     AdminService,
-    SetService
+    SetService,
+    GameService
   ],
   bootstrap: [AppComponent]
 })

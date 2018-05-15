@@ -121,7 +121,7 @@
     font-weight: bold;
     text-shadow: 2px 2px 0px #fff;
     padding-top:10px;
-    margin-bottom:20px;
+    /* margin-bottom:20px; */
 }
 
 .now-section .rounds-display-section h5 {
@@ -131,4 +131,63 @@
     font-weight: bold; */
     /* padding-top:10px; */
     margin-bottom:10px;
+}
+
+.game-section {
+    margin-top:15px;
+    height: 100px;
+}
+.game-actions {
+    margin:0 auto;
+    width:240px;
+    height: 100px;
+}
+
+.game-actions .action {
+    float: left;
+    width:80px;
+    height: 100px;
+    /* background: rgba(0, 0, 0, 0.2);
+    border-radius:10px; */
+    /* margin-right:5px;
+    margin-left:5px; */
+}
+
+.game-actions .action p {
+    text-align: center;
+    font-weight: bold;
+    background: rgba(0, 0, 0, 0.15);
+    border-radius:10px;
+    width:40px;
+    height:27px;
+    margin:0 auto;
+    display: block;
+}
+
+.game-actions .action button {
+    border:none;
+    width:60px;
+    height: 60px;
+    margin-left:10px;
+    /* margin-top:10px; */
+    margin-bottom:3px;
+}
+
+.game-actions .action .like {
+    background: url('../../assets/images/boutons-like.png');
+}
+.game-actions .action .like:hover {
+    background: url('../../assets/images/boutons-like-on.png');
+}
+.game-actions .action .bullet {
+    background: url('../../assets/images/boutons-bullet.png');
+}
+.game-actions .action .bullet:hover {
+    background: url('../../assets/images/boutons-bullet-on.png');
+}
+.game-actions .action .bouse {
+    background: url('../../assets/images/boutons-bouse.png');
+}
+.game-actions .action .bouse:hover {
+    background: url('../../assets/images/boutons-bouse-on.png');
 }

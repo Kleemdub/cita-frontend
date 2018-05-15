@@ -26,6 +26,8 @@
                         <h3>Round {{oneRound.roundNumber}}</h3>
                         <ul>
                           <li *ngFor="let oneSet of oneRound.sets, let pos = index">
+                            <div class="v-sep-20"></div>
+                            <div class="v-sep-10"></div>
                             <div class="v-sep-20 tri-beige-h"></div>
                             <div class="v-sep-10"></div>
                             <h5>{{oneSet.selecta.nickname}}</h5>
@@ -35,31 +37,29 @@
                             <div class="game-section">
 
                               <div class="game-actions">
-                                <div class="action like">
-                                  <button (click)="likeClick(OneEvent._id, oneRound._id, pos)">Like</button>
+                                <div class="action">
+                                  <button class="like" (click)="likeClick(OneEvent._id, oneRound._id, pos)"></button>
                                   <p class="action-nb">{{like}}</p>
                                 </div>
-                              </div>
-
-                              <div class="game-actions">
-                                <div class="action bullet">
-                                  <button (click)="bulletClick(OneEvent._id, oneRound._id, pos)">Bullet</button>
+                              
+                                <div class="action">
+                                  <button class="bullet" (click)="bulletClick(OneEvent._id, oneRound._id, pos)"></button>
                                   <p class="action-nb">{{bullet}}</p>
                                 </div>
-                              </div>
-
-                              <div class="game-actions">
-                                <div class="action bouse">
-                                  <button (click)="bouseClick(OneEvent._id, oneRound._id, pos)">Bouse</button>
+                              
+                                <div class="action">
+                                  <button class="bouse" (click)="bouseClick(OneEvent._id, oneRound._id, pos)"></button>
                                   <p class="action-nb">{{bouse}}</p>
                                 </div>
+                                <div class="clear-both"></div>
                               </div>
 
                             </div>
 
                             <div class="v-sep-10"></div>
                             <div class="v-sep-20 tri-beige-b"></div>
-                            <div class="v-sep-20"></div>
+                            <!-- <div class="v-sep-20"></div>
+                            <div class="v-sep-10"></div> -->
                           </li>
                         </ul>
                       </div>

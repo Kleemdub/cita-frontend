@@ -62,17 +62,25 @@ export class EventCreateComponent implements OnInit {
     this.newEvent.rounds.push(this.round1);
 
     // round 2
-    if(this.newEvent.nbRounds == 2 || this.newEvent.nbRounds == 3) {
+    if(this.newEvent.nbRounds == 2) {
       this.round2.roundNumber = 2;
       this.round2.status = "open";
       this.round2.nbSelectas = this.newEvent.nbSelectas;
-      this.round2.isFinal = false;
+      this.round2.isFinal = true;
       this.round2.selectas.push(eventAdmin);
       this.newEvent.rounds.push(this.round2);
     }
 
     // round 3
     if(this.newEvent.nbRounds == 3) {
+
+      this.round2.roundNumber = 2;
+      this.round2.status = "open";
+      this.round2.nbSelectas = this.newEvent.nbSelectas;
+      this.round2.isFinal = false;
+      this.round2.selectas.push(eventAdmin);
+      this.newEvent.rounds.push(this.round2);
+
       this.round3.roundNumber = 3;
       this.round3.status = "open";
       this.round3.nbSelectas = 2;

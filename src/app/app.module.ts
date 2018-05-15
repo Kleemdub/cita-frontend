@@ -20,8 +20,7 @@ import { AdminService } from './api/admin.service';
 import { EventDetailsComponent } from './event-details/event-details.component';
 import { SetCreateComponent } from './set-create/set-create.component';
 import { SetService } from './api/set.service';
-// import { FileSelectDirective } from 'ng2-file-upload';
-import { FileSelectDirective, FileDropDirective, FileUploader } from 'ng2-file-upload/ng2-file-upload';
+import { FileSelectDirective, FileDropDirective, FileUploader, FileUploadModule } from 'ng2-file-upload';
 import { ArenaComponent } from './arena/arena.component';
 import { SafeHtmlPipe } from './pipes/safe-html.pipe';
 import { GameService } from './api/game.service';
@@ -38,7 +37,6 @@ import { GameService } from './api/game.service';
     UserAccountComponent,
     EventDetailsComponent,
     SetCreateComponent,
-    FileSelectDirective,
     ArenaComponent,
     SafeHtmlPipe
 
@@ -51,7 +49,8 @@ import { GameService } from './api/game.service';
     MzSelectModule,
     MzRadioButtonModule,
     MzCheckboxModule,
-    FormsModule
+    FormsModule,
+    FileUploadModule
   
   ],
   providers: [

@@ -1,7 +1,7 @@
 <h2>Welcome {{userTruc.currentUser.nickname}}</h2>
 
 
-<ul *ngIf="events != ''" >
+<ul *ngIf="events.length > 0" >
   <h3>Manage your Sound Clash Events:</h3>
 
     <li *ngFor="let OneEvent of events">
@@ -23,7 +23,7 @@
     </li>
 </ul>
 
-<ul *ngIf="selectaEvents != ''" >
+<ul *ngIf="selectaEvents.length > 0" >
         <h3>You are registred for these Events:</h3>
       
           <li *ngFor="let OneEvent of selectaEvents">
@@ -45,7 +45,7 @@
           </li>
       </ul>
 
-<div *ngIf="events == '' && selectaEvents == ''">
+<div *ngIf="events.length == 0 && selectaEvents.length == 0">
     <h3>You actually don't participate to any Event</h3>
 </div>
 

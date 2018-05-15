@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SetService } from '../api/set.service';
 import { UserService, LoginCredentials } from '../api/user.service';
-import { FileSelectDirective, FileUploader } from 'ng2-file-upload/ng2-file-upload';
+import { FileSelectDirective, FileUploader, FileUploadModule } from 'ng2-file-upload';
 import { environment } from '../../environments/environment';
 import { ActivatedRoute, Router } from '@angular/router';
 

@@ -127,10 +127,34 @@
   <div class="v-sep-20 tri-red-h"></div>
   <div class="v-sep-20"></div>
 
-  <h5>Ready Yu Ready? Send dis ya event fi display!</h5>
-  <div class="v-sep-20"></div>
+  
+  <!-- PENDING -->
+  <div *ngIf="event?.status == 'pending'">
+    <h5>Ready Yu Ready? Send dis ya event fi display!</h5>
+    <div class="v-sep-20"></div>
+  
+    <button (click)="launchClick(event?._id)" class="waves-effect waves-light btn create-event-form-btn deep-orange darken-4">Launch this Event</button>
+  </div>
 
-  <button (click)="launchClick(event?._id)" class="waves-effect waves-light btn create-event-form-btn deep-orange darken-4">Launch this Event</button>
+  <!-- OPEN FOR REGISTRATION -->
+  <div *ngIf="event?.status == 'open'">
+    <h5>This event is still open for registration.</h5>
+  </div>
+
+  <!-- DISPLAYED -->
+  <div *ngIf="event?.status == 'displayed'">
+    <div *ngFor="let oneRound of event?.rounds, let pos = index">
+      <!-- {{oneRound.status}}
+      {{oneRound.roundNumber}}
+      {{oneRound._id}} -->
+      <div *ngIf="oneRound.status == 'displayed'">
+        <h5>Round {{oneRound.roundNumber}} is currently online.</h5>
+        <div class="v-sep-20"></div>
+        <button (click)="closeRoundClick(oneRound._id, pos)" class="waves-effect waves-light btn create-event-form-btn deep-orange darken-4">Close Round {{oneRound.roundNumber}}</button>  
+      </div>
+
+    </div>
+  </div>
 
   <div class="v-sep-10"></div>
   <div class="v-sep-20"></div>

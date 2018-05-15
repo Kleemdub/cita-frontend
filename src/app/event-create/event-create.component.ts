@@ -21,6 +21,11 @@ export class EventCreateComponent implements OnInit {
   round2: Round = new Round;
   round3: Round = new Round;
 
+  scoresObj: any = {
+    selecta: this.userTruc.currentUser._id,
+    score: 0
+  }
+
   constructor(
     public userTruc: UserService,
     public apiEvent: EventService
@@ -42,12 +47,15 @@ export class EventCreateComponent implements OnInit {
     this.newEvent.title = "";
     this.newEvent.registrations = 1;
     this.newEvent.admin = this.userTruc.currentUser._id;
-    this.newEvent.status = "displayed";
+    this.newEvent.status = "open";
     this.newEvent.selectas.push(eventAdmin);
+    this.newEvent.scores1.push(this.scoresObj);
+    this.newEvent.scores2.push(this.scoresObj);
+    this.newEvent.scores3.push(this.scoresObj);
 
     // round 1
     this.round1.roundNumber = 1;
-    this.round1.status = "open";
+    this.round1.status = "displayed";
     this.round1.nbSelectas = this.newEvent.nbSelectas;
     this.round1.isFinal = false;
     this.round1.selectas.push(eventAdmin);

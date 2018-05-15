@@ -143,4 +143,14 @@ export class EventDetailsComponent implements OnInit {
     });
   }
 
+  closeRoundClick(roundId, roundPos) {
+    // console.log(roundPos);
+    this.apiEvent.closeRound(roundId, roundPos)
+    .then(() => {})
+    .catch((err) => {
+      console.log('Close Round error');
+      console.log(err);
+    });
+  }
+
 }

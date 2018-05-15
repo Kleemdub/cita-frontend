@@ -55,6 +55,13 @@ export class EventService {
     .toPromise();
   }
 
+  // PUT /api/events/close/round/:roundId/:roundPos
+  closeRound(roundId: any, roundPos: any) {
+    return this.ajaxEngine
+    .put(`${environment.backendUrl}/api/events/close/round/${roundId}/${roundPos}`, '')
+    .toPromise();
+  }
+
 }
 
 export class Selecta {
@@ -83,6 +90,13 @@ export class Event {
   title: string;
   admin: any;
   tags: Array<string> = [];
+  winner: any;
+  winner1: any;
+  winner2: any;
+  winner3: any;
+  scores1:  Array<any> = [];
+  scores2:  Array<any> = [];
+  scores3:  Array<any> = [];
   nbSelectas: number;
   registrations: number;
   selectas: Array<any> = [];
@@ -93,6 +107,7 @@ export class Event {
   createdAt?: Date; // '?' makes this property optional
   updatedAt?: Date;
 }
+
 
 export class Round {
   _id: string;

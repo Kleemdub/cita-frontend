@@ -59,6 +59,7 @@ export class ArenaComponent implements OnInit {
     this.apiEvent.getEventList()
     .then((result: Array<Event>) => {
       this.events = result;
+      // console.log(this.events);
       this.events.forEach((oneEvent) => {
         oneEvent.rounds.forEach((oneRound) => {
           if(oneRound.status == "displayed") {

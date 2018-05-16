@@ -78,9 +78,9 @@
               <!-- CLOSED ROUND(S) LINK //////////////////////////////////////////////////////////////// -->
               <!-- //////////////////////////////////////////////////////////////////////////////////// -->
               <ul class="closed-section">
-                <div class="closed-round-box" >
+                <div  >
                   <li *ngFor="let oneRound of OneEvent.rounds, let roundPos = index">
-                    <div [routerLink]="['/archives/event', OneEvent._id, 'round', oneRound._id]" *ngIf="oneRound.status == 'closed'">
+                    <div class="closed-round-box" [routerLink]="['/archives/event', OneEvent._id, 'round', oneRound._id]" *ngIf="oneRound.status == 'closed'">
                       <div class="closed-round">
                         <h4>Round {{oneRound.roundNumber}} <span class="text-beige">finished</span></h4>
                       </div>

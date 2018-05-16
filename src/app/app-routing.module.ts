@@ -9,12 +9,14 @@ import { EventDetailsComponent } from './event-details/event-details.component';
 import { SetCreateComponent } from './set-create/set-create.component';
 import { ArenaComponent } from './arena/arena.component';
 import { RoundComponent } from './round/round.component';
+import { ChatComponent } from './chat/chat.component';
 
 const routes: Routes = [
   { path: '', component: HomePageComponent },
   { path: 'login', component: LoginComponent },
   { path: 'signup', component: SignupComponent },
   { path: 'arena', component: ArenaComponent },
+  { path: 'chat', component: ChatComponent },
   { path: 'user/:userId', component: UserAccountComponent },
   { path: 'event/create', component: EventCreateComponent },
   { path: 'event/:eventId', component: EventDetailsComponent },

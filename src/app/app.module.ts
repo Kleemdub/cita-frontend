@@ -25,6 +25,9 @@ import { ArenaComponent } from './arena/arena.component';
 import { SafeHtmlPipe } from './pipes/safe-html.pipe';
 import { GameService } from './api/game.service';
 import { RoundComponent } from './round/round.component';
+import { ChatService } from './chat.service';
+import { ChatComponent } from './chat/chat.component';
+import { HttpModule } from '@angular/http';
 
 
 @NgModule({
@@ -40,7 +43,8 @@ import { RoundComponent } from './round/round.component';
     SetCreateComponent,
     ArenaComponent,
     SafeHtmlPipe,
-    RoundComponent
+    RoundComponent,
+    ChatComponent
 
   ],
   imports: [
@@ -52,7 +56,8 @@ import { RoundComponent } from './round/round.component';
     MzRadioButtonModule,
     MzCheckboxModule,
     FormsModule,
-    FileUploadModule
+    FileUploadModule,
+    HttpModule
   
   ],
   providers: [
@@ -60,7 +65,8 @@ import { RoundComponent } from './round/round.component';
     UserService,
     AdminService,
     SetService,
-    GameService
+    GameService,
+    ChatService
   ],
   bootstrap: [AppComponent]
 })

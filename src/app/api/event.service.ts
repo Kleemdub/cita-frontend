@@ -62,6 +62,14 @@ export class EventService {
     .toPromise();
   }
 
+  // GET /api/archives/events/:eventId/round/:roundId
+  getRound(eventId: any, roundId: any) {
+    return this.ajaxEngine
+    // .get('http://localhost:3000/api/events')
+    .get(`${environment.backendUrl}/api/archives/events/${eventId}/round/${roundId}`)
+    .toPromise();
+  }
+
 }
 
 export class Selecta {
@@ -107,7 +115,6 @@ export class Event {
   createdAt?: Date; // '?' makes this property optional
   updatedAt?: Date;
 }
-
 
 export class Round {
   _id: string;

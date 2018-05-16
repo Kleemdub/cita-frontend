@@ -1,5 +1,5 @@
 <div class="now-section">
-    <h2 class="brown-text text-darken-4">
+    <h2 class="brown-text text-darken-3">
         <i class="material-icons deep-orange-text text-darken-4">star</i>
         <i class="material-icons deep-orange-text text-darken-4">star</i>
         <i class="material-icons deep-orange-text text-darken-4">star</i>
@@ -21,6 +21,9 @@
 
                   <ul>
                     <li *ngFor="let oneRound of OneEvent.rounds, let roundPos = index">
+
+                      <!-- CURRENT ROUND DISPLAYED ///////////////////////////////////////////////////////////// -->
+                      <!-- //////////////////////////////////////////////////////////////////////////////////// -->
                       <div *ngIf="oneRound.status == 'displayed'">
   
                         <h3>Round {{oneRound.roundNumber}}</h3>
@@ -65,11 +68,32 @@
                       </div>
                     </li>
                   </ul>
-
                 </div>
+              </div>
+              <!-- END OF // CURRENT ROUND DISPLAYED /////////////////////////////////////////////////// -->
+              <!-- //////////////////////////////////////////////////////////////////////////////////// -->
 
+              <div class="v-sep-20 clear-both"></div>
 
-            </div>
+              <!-- CLOSED ROUND(S) LINK //////////////////////////////////////////////////////////////// -->
+              <!-- //////////////////////////////////////////////////////////////////////////////////// -->
+              <ul class="closed-section">
+                <div class="closed-round-box" >
+                  <li *ngFor="let oneRound of OneEvent.rounds, let roundPos = index">
+                    <div [routerLink]="['/archives/event', OneEvent._id, 'round', oneRound._id]" *ngIf="oneRound.status == 'closed'">
+                      <div class="closed-round">
+                        <h4>Round {{oneRound.roundNumber}} <span class="text-beige">finished</span></h4>
+                      </div>
+                      <div class="round-winner">
+                        <i class=" winner-icon material-icons deep-orange-text text-darken-4">star</i>
+                        <h5>Winner is <b>{{OneEvent.winner1.nickname}}</b></h5>
+                        <i class=" winner-icon material-icons deep-orange-text text-darken-4">star</i>
+                      </div>
+                      <div class="clear-both"></div>
+                    </div>
+                  </li>
+                </div>
+              </ul>
         </li>
     </ul>
 

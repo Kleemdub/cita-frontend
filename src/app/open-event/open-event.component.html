@@ -4,7 +4,7 @@
     <div class="v-sep-20"></div>
     <div class="tri-brown-h v-sep-20"></div>
 
-    <h2 class="brown-text text-darken-4">
+    <h2 class="brown-text text-darken-3">
             <i class="material-icons deep-orange-text text-darken-4">flash_on</i>
             <span class="h2-inner">Join the next Sound Clash</span>
             <i class="material-icons deep-orange-text text-darken-4">flash_on</i>
@@ -15,7 +15,7 @@
 
             <div *ngIf="!isEven" class="col-odd">
                 <div [routerLink]="['/event', OneEvent._id]" class="now-section-box">
-                    <h3 class="brown darken-4">Upcoming Event</h3>
+                    <h3 class="brown darken-3">Upcoming Event</h3>
                     <div class="section-box-inner">
                         <ul class="selectas-list">
                             <li *ngFor="let OneSelecta of OneEvent.selectas, let last = last">
@@ -45,7 +45,7 @@
 
             <div *ngIf="isEven" class="col-even">
                 <div [routerLink]="['/event', OneEvent._id]" class="now-section-box">
-                    <h3 class="brown darken-4">Upcoming Event</h3>
+                    <h3 class="brown darken-3">Upcoming Event</h3>
                     <div class="section-box-inner">
                         <ul class="selectas-list">
                             <li *ngFor="let OneSelecta of OneEvent.selectas, let last = last">

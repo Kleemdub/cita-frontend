@@ -24,6 +24,7 @@ import { FileSelectDirective, FileDropDirective, FileUploader, FileUploadModule 
 import { ArenaComponent } from './arena/arena.component';
 import { SafeHtmlPipe } from './pipes/safe-html.pipe';
 import { GameService } from './api/game.service';
+import { RoundComponent } from './round/round.component';
 
 
 @NgModule({
@@ -38,7 +39,8 @@ import { GameService } from './api/game.service';
     EventDetailsComponent,
     SetCreateComponent,
     ArenaComponent,
-    SafeHtmlPipe
+    SafeHtmlPipe,
+    RoundComponent
 
   ],
   imports: [

@@ -1,0 +1,90 @@
+<div class="now-section">
+  <h2 class="brown-text text-darken-3">
+      <i class="material-icons deep-orange-text text-darken-4">star</i>
+      <i class="material-icons deep-orange-text text-darken-4">star</i>
+      <i class="material-icons deep-orange-text text-darken-4">star</i>
+      Sound Clash Archives
+      <i class="material-icons deep-orange-text text-darken-4">star</i>
+      <i class="material-icons deep-orange-text text-darken-4">star</i>
+      <i class="material-icons deep-orange-text text-darken-4">star</i>
+  </h2>
+
+  <div class="now-section-box" >
+    <div class="now-section-header">
+        <div class="now-section-header-inner">
+            <h3>{{event?.title}}</h3>
+        </div>
+    </div>
+
+    <div class="rounds-display-section">
+      <ul>
+          <li *ngFor="let oneRound of event?.rounds, let roundPos = index">
+              <div *ngIf="oneRound._id == roundId">
+                  <h3>Round {{oneRound.roundNumber}}</h3>
+
+                  <div>
+                    <div class="v-sep-20"></div>
+                    <div class="v-sep-20 tri-red-h"></div>
+                    <div class="v-sep-10"></div>
+
+                    <h4><span class="deep-orange-text text-darken-4">Winner: </span>{{roundWinner}}</h4>
+                    <div class="v-sep-20"></div>
+
+                    <div class="scores-section brown darken-3">
+                      <ul>
+                        <li *ngFor="let oneScore of scores, let scorePos = index">
+                          <p>{{oneScore.selecta}} : {{oneScore.percent}}% <span class="text-beige">({{oneScore.selectaScore}} pts)</span> </p>
+                          <div class="scoreBar" [ngStyle]="{ 'width': oneScore.percent + '%' }"></div>
+                          <div class="v-sep-10"></div>
+                        </li>
+                      </ul>
+
+                    </div>
+
+                    <div class="v-sep-20"></div>
+                    <div class="v-sep-20 tri-red-b"></div>
+                    <div class="v-sep-20"></div>
+                  </div>
+
+                  <ul>
+                      <li *ngFor="let oneSet of oneRound.sets, let pos = index">
+                          <div class="v-sep-20"></div>
+                          <div class="v-sep-10"></div>
+                          <div class="v-sep-20 tri-beige-h"></div>
+                          <div class="v-sep-10"></div>
+                          <h5>{{oneSet.selecta.nickname}}</h5>
+                          
+                          
+                          <div class="widget-title-container" [innerHTML]="setHtml[pos] | safeHtml"></div>
+                          <div class="game-section">
+                            <p>
+                              {{oneSet.description}}
+                            </p>
+                          </div>
+
+                          <div class="v-sep-10"></div>
+                          <div class="v-sep-20 tri-beige-b"></div>
+                      </li>
+                  </ul>
+              </div>
+          </li>
+      </ul>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <div class="ribbon ribbon-g"></div>
+  <div class="ribbon ribbon-d"></div>
+</div>

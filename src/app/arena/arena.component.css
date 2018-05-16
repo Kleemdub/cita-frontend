@@ -28,7 +28,7 @@
     background-color: rgba(0, 0, 0, 0.04);
     box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.2);
     /* height:300px; */
-    transition: box-shadow 0.3s ease-in-out;
+    /* transition: box-shadow 0.3s ease-in-out; */
 }
 
 /* .now-section .now-section-box:hover {
@@ -190,4 +190,61 @@
 }
 .game-actions .action .bouse:hover {
     background: url('../../assets/images/boutons-bouse-on.png');
+}
+
+.closed-section {
+    margin:0px;
+    padding:0px;
+}
+
+.closed-round-box {
+    background-color: #3e2723;
+    background: url('../../assets/images/brown-ribbon.png');
+    background-repeat: repeat-x;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.2);
+    height:300px;
+    transition: box-shadow 0.3s ease-in-out;
+    padding-left:20px;
+    /* padding-right:20px; */
+    padding-top:17px;
+    height:60px;
+    box-sizing: border-box;
+}
+
+.closed-round-box .closed-round {
+    float:left;
+    margin-right: 15px;
+}
+
+.closed-round-box .round-winner {
+    float:left;
+}
+
+.closed-round-box .winner-icon {
+    float:left;
+}
+
+.closed-round-box h5 {
+    float:left;
+    margin-right:15px;
+    margin-left:15px;
+    color:#fff;
+}
+
+.closed-round-box:hover {
+    cursor: pointer;
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.35);
+}
+
+.closed-round-box h4 {
+    margin:0px;
+    color: #fff;
+    text-align: left;
+    font-family: 'Kadwa', serif;
+    /* padding-top:2px; */
+    font-size: 1.5em;
+}
+
+.text-beige {
+    color:#baa281;
 }

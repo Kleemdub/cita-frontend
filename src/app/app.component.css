@@ -197,7 +197,7 @@ nav {
 footer {
     width:auto;
     margin-top:70px;
-    height:360px;
+    height:320px;
     background-image: url('../assets/images/craft-paper-footer.png');
     background-repeat: repeat-x;
     background-position: top;
@@ -206,7 +206,7 @@ footer {
 
 footer .footer-top {
     width:auto;
-    height:230px;
+    height:180px;
     /* background-image: url('../assets/images/craft-paper-bande-bottom.png'); */
     background-repeat: repeat-x;
     background-position: top;
@@ -214,9 +214,15 @@ footer .footer-top {
 
 footer .footer-bottom {
     width:auto;
-    height:55px;
+    height:60px;
     /* opacity: 0.75; */
     text-align: center;
     color:#fff;
-    padding-top:15px;
+    padding-top:17px;
+    background: url('../assets/images/brown-ribbon.png');
+    background-repeat: repeat-x;
+}
+
+footer .footer-bottom p {
+ color:#a99473;
 }

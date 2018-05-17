@@ -2,15 +2,27 @@
   <li *ngFor="let oneWatchit of watchits">
 
       <!-- WIN CLASH -->
-      <div *ngIf="oneWatchit.type == 'winClash'" class="aside-container">
-        {{oneWatchit.user.nickname}}<br/>
-        {{oneWatchit.event.title}}
+      <div *ngIf="oneWatchit.type == 'winClash'" class="aside-container clash-winner">
+        <div class="cup-image"></div>
+        <div class="clash-winner-infos">
+          <p>
+            {{oneWatchit.user.nickname | uppercase}}<br/>
+            WON<br/>
+            {{oneWatchit.event.title | uppercase}}
+          </p>
+        </div>
       </div>
 
       <!-- WIN ROUND -->
-      <div *ngIf="oneWatchit.type == 'winRound'" class="aside-container">
-          {{oneWatchit.user.nickname}}<br/>
-          {{oneWatchit.roundNumber}}
+      <div *ngIf="oneWatchit.type == 'winRound'" class="aside-container round-winner">
+          <div class="sound-image"></div>
+          <div class="round-winner-infos">
+            <p>
+              {{oneWatchit.user.nickname | uppercase}}<br/>
+              WON<br/>
+              <span class="bigger">ROUND {{oneWatchit.roundNumber}}</span>
+            </p>
+          </div>
       </div>
 
   </li>

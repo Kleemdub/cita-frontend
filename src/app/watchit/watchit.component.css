@@ -1,6 +1,71 @@
+* {
+    margin:0;
+    padding:0;
+}
+
 .aside-container {
-    height: 200px;
+    height: 300px;
     width:80%;
-    background-color: #ccc;
+    /* background-color: #ccc; */
     margin-bottom:25px;
 }
+
+.clash-winner {
+    background: url('../../assets/images/winner-bg.png');
+    background-position-x: center;
+    background-repeat: repeat;
+    /* box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.2); */
+}
+
+.cup-image {
+    background: url('../../assets/images/cup.png');
+    width:120px;
+    height:120px;
+    display: block;
+    margin: 0 auto;
+}
+
+.clash-winner-infos {
+    padding-top:20px;
+}
+
+.clash-winner-infos p {
+    color:#fff;
+    text-align: center;
+    text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+    font-family: 'Kadwa', serif;
+    font-size:1.3rem;
+}
+
+
+.round-winner {
+    background: url('../../assets/images/round-bg.png');
+    background-position-x: center;
+    background-repeat: repeat;
+    /* box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.2); */
+}
+
+.sound-image {
+    background: url('../../assets/images/sound.png');
+    width:154px;
+    height:190px;
+    display: block;
+    margin: 0 auto;
+}
+
+.round-winner-infos {
+    padding-top:10px;
+}
+
+.round-winner-infos p {
+    color:#fff;
+    text-align: center;
+    text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+    font-family: 'Kadwa', serif;
+    font-size:1rem;
+}
+
+.bigger {
+    font-size:1.3rem;
+}
+    

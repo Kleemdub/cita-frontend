@@ -19,7 +19,7 @@ export class ChatComponent implements OnInit {
   newUser = { nickname: '', room: 'arena' };
   msgData = { room: '', nickname: '', message: '' };
   // socket = io('http://localhost:4000');
-  socket = io('http://localhost:4000');
+  socket = io(environment.backendUrl);
   
 
   constructor(

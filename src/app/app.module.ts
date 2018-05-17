@@ -28,6 +28,8 @@ import { RoundComponent } from './round/round.component';
 import { ChatService } from './chat.service';
 import { ChatComponent } from './chat/chat.component';
 import { HttpModule } from '@angular/http';
+import { WatchitComponent } from './watchit/watchit.component';
+import { WatchitService } from './api/watchit.service';
 
 
 @NgModule({
@@ -44,7 +46,8 @@ import { HttpModule } from '@angular/http';
     ArenaComponent,
     SafeHtmlPipe,
     RoundComponent,
-    ChatComponent
+    ChatComponent,
+    WatchitComponent
 
   ],
   imports: [
@@ -66,7 +69,8 @@ import { HttpModule } from '@angular/http';
     AdminService,
     SetService,
     GameService,
-    ChatService
+    ChatService,
+    WatchitService
   ],
   bootstrap: [AppComponent]
 })

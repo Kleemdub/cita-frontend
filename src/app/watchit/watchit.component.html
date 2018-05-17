@@ -1,0 +1,18 @@
+<ul>
+  <li *ngFor="let oneWatchit of watchits">
+
+      <!-- WIN CLASH -->
+      <div *ngIf="oneWatchit.type == 'winClash'" class="aside-container">
+        {{oneWatchit.user.nickname}}<br/>
+        {{oneWatchit.event.title}}
+      </div>
+
+      <!-- WIN ROUND -->
+      <div *ngIf="oneWatchit.type == 'winRound'" class="aside-container">
+          {{oneWatchit.user.nickname}}<br/>
+          {{oneWatchit.roundNumber}}
+      </div>
+
+  </li>
+</ul>
+

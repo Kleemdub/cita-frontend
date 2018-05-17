@@ -1,46 +1,45 @@
 
-<div class="container">
+<div class="my-container">
   <div class="row">
       <div class="col-md-5">
           <div class="panel panel-primary" *ngIf="joinned; else joinroom">
-              <div class="panel-heading">
-                  <!-- <span class="glyphicon glyphicon-comment"></span> {{ msgData.room }} -->
-                  <div class="btn-group pull-right">
-                      <button type="button" class="btn btn-default btn-xs" (click)="logout()">
-                          Logout
-                      </button>
-                  </div>
-              </div>
+              
               <div #scrollMe class="panel-body">
                   <ul class="chat">
                       <li *ngFor="let c of chats">
-                        <div class="left clearfix" *ngIf="c.nickname===msgData.nickname; else rightchat">
-                          <span class="chat-img pull-left">
-                            <img src="http://placehold.it/50/55C1E7/fff&text=ME" alt="User Avatar" class="img-circle" />
-                          </span>
-                          <div class="chat-body clearfix">
+
+                        <div class="item-right" *ngIf="c.nickname===msgData.nickname">
+                          <div class="chat-body">
                               <div class="header">
-                                  <strong class="primary-font">{{ c.nickname }}</strong> <small class="pull-right text-muted">
-                                      <span class="glyphicon glyphicon-time"></span>{{ c.updated_at | date: 'medium' }}</small>
+                                <span class="text-beige">{{ c.updated_at | date: 'medium' }}</span>
+                                <b>{{ c.nickname }}</b>
                               </div>
-                              <p>{{ c.message }}</p>
+                              <p class="message-right">{{ c.message }}</p>
                           </div>
+                          <div class="chat-img">
+                            <img src="http://placehold.it/50/55C1E7/fff&text=ME" alt="User Avatar" class="img-circle" />
+                          </div>
+                          <div class="clear-both"></div>
                         </div>
-                        <ng-template #rightchat>
-                          <div class="right clearfix">
-                            <span class="chat-img pull-right">
-                              <img src="http://placehold.it/50/FA6F57/fff&text=U" alt="User Avatar" class="img-circle" />
-                            </span>
-                            <div class="chat-body clearfix">
+
+                        
+                          <div class="item-left"  *ngIf="c.nickname!==msgData.nickname">
+                            <div class="chat-body">
                                 <div class="header">
-                                    <small class=" text-muted"><span class="glyphicon glyphicon-time"></span>{{ c.updated_at | date: 'medium' }}</small>
-                                    <strong class="pull-right primary-font">{{ c.nickname }}</strong>
+                                  <b>{{ c.nickname }}</b>
+                                    <span class="text-beige">{{ c.updated_at | date: 'medium' }}</span>
                                 </div>
-                                <p>{{ c.message }}</p>
+                                <p class="message-left">{{ c.message }}</p>
                             </div>
+                            <div class="chat-img">
+                              <img src="http://placehold.it/50/FA6F57/fff&text=U" alt="User Avatar" class="img-circle" />
+                            </div>
+                            <div class="clear-both"></div>
                           </div>
-                        </ng-template>
+                        
+                        <div class="clear-both"></div>
                       </li>
+                      <div class="clear-both"></div>
                   </ul>
               </div>
               <div class="panel-footer">
@@ -50,15 +49,22 @@
                       <input type="hidden" [(ngModel)]="msgData.nickname" name="nickname" />
                       <input id="btn-input" type="text" [(ngModel)]="msgData.message" name="message" class="form-control input-sm" placeholder="Type your message here..." required="" />
                       <span class="input-group-btn">
-                          <button class="btn btn-warning btn-sm" id="btn-chat" [disabled]="!msgForm.form.valid">
-                              Send</button>
+                          <button class="bt-send btn btn-warning btn-sm" id="btn-chat" [disabled]="!msgForm.form.valid">Send</button>
+                          <button type="button" class="waves-effect waves-light bt-leave btn deep-orange darken-4" (click)="logout()">Leave the chat room</button>
+                          <div class="clear-both"></div>
                       </span>
                   </div>
                 </form>
               </div>
+
+              <div class="panel-heading">
+                  <div class="btn-group pull-right">
+                      <!-- <button type="button" class="btn deep-orange darken-4" (click)="logout()">Leave the chat room</button> -->
+                  </div>
+              </div>
           </div>
           <ng-template #joinroom>
-            <button (click)="joinRoom()" class="btn btn-success">Join the Chatroom</button>
+            <button (click)="joinRoom()" class="bt-join waves-effect waves-light btn brown darken-3">Join the chat room</button>
           </ng-template>
       </div>
   </div>

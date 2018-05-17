@@ -1,52 +1,84 @@
-<h2>Welcome {{userTruc.currentUser.nickname}}</h2>
 
+<h2 class="brown-text text-darken-3">
+    <i class="material-icons deep-orange-text text-darken-4">star</i>
+    <i class="material-icons deep-orange-text text-darken-4">star</i>
+    <i class="material-icons deep-orange-text text-darken-4">star</i>
+    Welcome
+    <i class="material-icons deep-orange-text text-darken-4">star</i>
+    <i class="material-icons deep-orange-text text-darken-4">star</i>
+    <i class="material-icons deep-orange-text text-darken-4">star</i>
+</h2>
+
+<h2 class="user-nickname">{{userTruc.currentUser?.nickname}}</h2>
+
+<div class="v-sep-20"></div>
+<div class="v-sep-20"></div>
 
 <ul *ngIf="events.length > 0" >
-  <h3>Manage your Sound Clash Events:</h3>
+    <div class="v-sep-20 tri-beige-h"></div>
+    <div class="v-sep-20"></div>
+    <h3>Manage your Sound Clash Events:</h3>
+    <div class="v-sep-20"></div>
 
     <li *ngFor="let OneEvent of events">
-        <div class="now-section-box">
-            <h4>Admin: {{OneEvent.admin.nickname}}</h4>
-            <p>Status: {{OneEvent.status}}</p>
+        <div [routerLink]="['/event', OneEvent._id]" class="now-section-box">
+            <h4>Created by <span class="deep-orange-text text-darken-4">{{OneEvent?.admin.nickname}}</span></h4>
+            <p>Status: <b>{{OneEvent?.status}}</b></p>
             <p *ngIf="OneEvent.status == 'open'">
               This event is still open to registrations
             </p>
-            <p>Needed number of selectas: {{OneEvent.nbSelectas}}</p>
+            <p>Needed number of selectas: {{OneEvent?.nbSelectas}}</p>
             <p>Registred selectas:</p>
             <ul class="selectas-list">
                 <li *ngFor="let OneSelecta of OneEvent.selectas">
-                    {{OneSelecta.nickname | uppercase}}
+                    <b>{{OneSelecta?.nickname | uppercase}}</b>
                 </li>
             </ul>
-            <a [routerLink]="['/event', OneEvent._id]" >More Infos</a>
+            <div class="clear-both"></div>
+            <button [routerLink]="['/event', OneEvent._id]" class="bt-join waves-effect waves-light btn brown darken-3">More Infos</button>
+            <div class="clear-both"></div>
         </div>
     </li>
+    <!-- <div class="v-sep-20"></div> -->
+    <div class="v-sep-20 tri-beige-b"></div>
 </ul>
 
+
 <ul *ngIf="selectaEvents.length > 0" >
-        <h3>You are registred for these Events:</h3>
-      
-          <li *ngFor="let OneEvent of selectaEvents">
-              <div class="now-section-box">
-                  <h4>Admin: {{OneEvent.admin.nickname}}</h4>
-                  <p>Status: {{OneEvent.status}}</p>
-                  <p *ngIf="OneEvent.status == 'open'">
-                    This event is still open to registrations
-                  </p>
-                  <p>Needed number of selectas: {{OneEvent.nbSelectas}}</p>
-                  <p>Registred selectas:</p>
-                  <ul class="selectas-list">
-                      <li *ngFor="let OneSelecta of OneEvent.selectas">
-                          {{OneSelecta.nickname | uppercase}}
-                      </li>
-                  </ul>
-                  <a [routerLink]="['/event', OneEvent._id]" >More Infos</a>
-              </div>
-          </li>
-      </ul>
+    <div class="v-sep-20 tri-beige-h"></div>
+    <div class="v-sep-20"></div>
+    <h3>You are registred for these Events:</h3>
+    <div class="v-sep-20"></div>
+    
+    <li *ngFor="let OneEvent of selectaEvents">
+        <div [routerLink]="['/event', OneEvent._id]" class="now-section-box">
+            <h4>Created by <span class="deep-orange-text text-darken-4">{{OneEvent?.admin.nickname}}</span></h4>
+            <p>Status: <b>{{OneEvent?.status}}</b></p>
+            <p *ngIf="OneEvent.status == 'open'">
+            This event is still open to registrations
+            </p>
+            <p>Needed number of selectas: {{OneEvent?.nbSelectas}}</p>
+            <p>Registred selectas:</p>
+            <ul class="selectas-list">
+                <li *ngFor="let OneSelecta of OneEvent.selectas">
+                    <b>{{OneSelecta?.nickname | uppercase}}</b>
+                </li>
+            </ul>
+            <div class="clear-both"></div>
+            <button [routerLink]="['/event', OneEvent._id]" class="bt-join waves-effect waves-light btn brown darken-3">More Infos</button>
+            <div class="clear-both"></div>
+        </div>
+    </li>
+    <!-- <div class="v-sep-20"></div> -->
+    <div class="v-sep-20 tri-beige-b"></div>
+</ul>
 
 <div *ngIf="events.length == 0 && selectaEvents.length == 0">
+    <div class="v-sep-20 tri-beige-h"></div>
+    <div class="v-sep-20"></div>
     <h3>You actually don't participate to any Event</h3>
+    <div class="v-sep-20"></div>
+    <div class="v-sep-20 tri-beige-b"></div>
 </div>
 
 

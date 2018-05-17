@@ -22,26 +22,38 @@ export class UserAccountComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    const adminId = this.userTruc.currentUser._id;
-    const selectaId = this.userTruc.currentUser._id;
 
-    this.apiAdmins.getAdminEventList(adminId)
-    .then((result: Array<Event>) => {
-      this.events = result;
+    this.userTruc.check()
+    .then(() => {
+
+      const adminId = this.userTruc.currentUser._id;
+      const selectaId = this.userTruc.currentUser._id;
+
+      this.apiAdmins.getAdminEventList(adminId)
+      .then((result: Array<Event>) => {
+        this.events = result;
+      })
+      .catch((err) => {
+        console.log('Admin Event list error');
+        console.log(err);
+      });
+
+      this.apiAdmins.getSelectaEventList(selectaId)
+      .then((result: Array<Event>) => {
+        this.selectaEvents = result;
+      })
+      .catch((err) => {
+        console.log('Admin Event list error');
+        console.log(err);
+      });
+
     })
     .catch((err) => {
-      console.log('Admin Event list error');
+      console.log("App login check error");
       console.log(err);
     });
 
-    this.apiAdmins.getSelectaEventList(selectaId)
-    .then((result: Array<Event>) => {
-      this.selectaEvents = result;
-    })
-    .catch((err) => {
-      console.log('Admin Event list error');
-      console.log(err);
-    });
+    
 
   }
 

@@ -2,6 +2,7 @@
 <div class="my-container">
   <div class="row">
       <div class="col-md-5">
+          <div class="v-sep-20"></div>
           <div class="panel panel-primary" *ngIf="joinned; else joinroom">
               
               <div #scrollMe class="panel-body">
@@ -64,7 +65,7 @@
               </div>
           </div>
           <ng-template #joinroom>
-            <button (click)="joinRoom()" class="bt-join waves-effect waves-light btn brown darken-3">Join the chat room</button>
+            <button (click)="joinRoom()" class="bt-join waves-effect waves-light btn brown darken-3">Enter the chat room</button>
           </ng-template>
       </div>
   </div>

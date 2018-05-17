@@ -1,15 +1,31 @@
-<h2>Login</h2>
+<h2 class="brown-text text-darken-3">
+    <i class="material-icons deep-orange-text text-darken-4">star</i>
+    <i class="material-icons deep-orange-text text-darken-4">star</i>
+    <i class="material-icons deep-orange-text text-darken-4">star</i>
+    Log In
+    <i class="material-icons deep-orange-text text-darken-4">star</i>
+    <i class="material-icons deep-orange-text text-darken-4">star</i>
+    <i class="material-icons deep-orange-text text-darken-4">star</i>
+</h2>
+
+<div class="v-sep-20 tri-beige-h"></div>
+<div class="v-sep-20"></div>
+<div class="v-sep-20"></div>
 
 <form (ngSubmit)="loginSubmit()">
-  <label>
-    Email:
-    <input type="email" [(ngModel)]="formCreds.email" name="email" />
-  </label>
+  <div class="input-field text-area-section col s12">
+    <i class="material-icons prefix">email</i>
+    <input id="email" type="email" [(ngModel)]="formCreds.email" name="email" class="validate" />
+    <label for="email">Email</label>
+  </div>
   <br/>
-  <label>
-    Password:
-    <input type="password" [(ngModel)]="formCreds.password" name="password" />
-  </label>
-
-  <button>Login</button>
+  <div class="input-field text-area-section col s12">
+    <i class="material-icons prefix">lock</i>
+    <input id="password" type="password" [(ngModel)]="formCreds.password" name="password" class="validate" />
+    <label for="password">Password</label>
+  </div>
+  <div class="v-sep-20"></div>
+  <div class="v-sep-10"></div>
+  <button class="bt-join waves-effect waves-light btn brown darken-3">Log In</button>
 </form>
+

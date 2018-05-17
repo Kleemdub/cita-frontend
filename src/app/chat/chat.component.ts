@@ -2,6 +2,7 @@
 import { Component, OnInit, AfterViewChecked, ElementRef, ViewChild } from '@angular/core';
 import { ChatService } from '../chat.service';
 import { UserService } from '../api/user.service';
+import { environment } from '../../environments/environment';
 import * as io from "socket.io-client";
 
 @Component({
@@ -17,6 +18,7 @@ export class ChatComponent implements OnInit {
   joinned: boolean = false;
   newUser = { nickname: '', room: 'arena' };
   msgData = { room: '', nickname: '', message: '' };
+  // socket = io('http://localhost:4000');
   socket = io('http://localhost:4000');
   
 

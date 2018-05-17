@@ -1,26 +1,46 @@
-<p>
-  signup works!
-</p>
+<h2 class="brown-text text-darken-3">
+  <i class="material-icons deep-orange-text text-darken-4">star</i>
+  <i class="material-icons deep-orange-text text-darken-4">star</i>
+  <i class="material-icons deep-orange-text text-darken-4">star</i>
+  Sign Up
+  <i class="material-icons deep-orange-text text-darken-4">star</i>
+  <i class="material-icons deep-orange-text text-darken-4">star</i>
+  <i class="material-icons deep-orange-text text-darken-4">star</i>
+</h2>
+
+<div class="v-sep-20 tri-beige-h"></div>
+<div class="v-sep-20"></div>
+<div class="v-sep-20"></div>
 
 <form (ngSubmit)="signupSubmit()">
-  <label>
-    Nickname:
-    <input type="text" [(ngModel)]="formSignupCreds.nickname" name="nickname" />
-  </label>
-  <br/>
-  <label>
-    Email:
-    <input type="email" [(ngModel)]="formSignupCreds.email" name="email" />
-  </label>
-  <br/>
-  <label>
-    Password:
-    <input type="password" [(ngModel)]="formSignupCreds.password" name="password" />
-  </label>
-  <label>
-    Confirm your password:
-    <input type="password" name="confirmPassword" />
-  </label>
 
-  <button>Sign Up</button>
+  <div class="input-field text-area-section col s12">
+    <i class="material-icons prefix">account_circle</i>
+    <input id="nickname" type="text" [(ngModel)]="formSignupCreds.nickname" name="nickname" class="validate" />
+    <label for="nickname">Nickname</label>
+  </div>
+  <br/>
+  <div class="input-field text-area-section col s12">
+    <i class="material-icons prefix">email</i>
+    <input id="email" type="email" [(ngModel)]="formSignupCreds.email" name="email" class="validate" />
+    <label for="email">Email</label>
+  </div>
+  <br/>
+  <div class="input-field text-area-section col s12">
+    <i class="material-icons prefix">lock</i>
+    <input id="password" type="password" [(ngModel)]="formSignupCreds.password" name="password" class="validate" />
+    <label for="password">Password</label>
+  </div>
+  <div class="input-field text-area-section col s12">
+    <i class="material-icons prefix">lock_outline</i>
+    <input id="confirmPassword" type="password" name="confirmPassword" class="validate" />
+    <label for="confirmPassword">Confirm your password</label>
+  </div>
+
+  <div class="v-sep-20"></div>
+  <div class="v-sep-10"></div>
+  <button class="bt-join waves-effect waves-light btn brown darken-3">Sign Up</button>
 </form>
+
+
+  

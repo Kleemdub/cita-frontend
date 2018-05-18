@@ -16,6 +16,13 @@ export class WatchitComponent implements OnInit {
 
   ngOnInit() {
 
+    this.refreshNew();
+    this.apiWatchit.newsSubject.subscribe(() => {
+      this.refreshNew();
+    });
+  }
+
+  refreshNew() {
     this.apiWatchit.getWatchit()
     .then((result: Array<WatchIt>) => {
       this.watchits = result;
@@ -25,7 +32,5 @@ export class WatchitComponent implements OnInit {
       console.log('Phone list error');
       console.log(err);
     });
-
   }
-
 }

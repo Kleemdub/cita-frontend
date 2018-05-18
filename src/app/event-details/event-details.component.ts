@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { UserService } from '../api/user.service';
 import { EventService, Event, User, Selecta } from '../api/event.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { WatchitService } from '../api/watchit.service';
 
 
 @Component({
@@ -29,7 +30,8 @@ export class EventDetailsComponent implements OnInit {
     private reqTruc: ActivatedRoute,
     public userTruc: UserService,
     public apiEvent: EventService,
-    private resTruc: Router
+    private resTruc: Router,
+    public apiWatchit: WatchitService
   ) { }
 
   ngOnInit() {
@@ -146,7 +148,9 @@ export class EventDetailsComponent implements OnInit {
   closeRoundClick(roundId, roundPos) {
     // console.log(roundPos);
     this.apiEvent.closeRound(roundId, roundPos)
-    .then(() => {})
+    .then(() => {
+      this.apiWatchit.updateNews();
+    })
     .catch((err) => {
       console.log('Close Round error');
       console.log(err);

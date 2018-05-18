@@ -2,9 +2,12 @@ import { Injectable } from '@angular/core';
 import { HttpClient} from '@angular/common/http';
 import { environment } from '../../environments/environment';
 import 'rxjs/operator/toPromise';
+import { Subject } from 'rxjs/Subject';
 
 @Injectable()
 export class WatchitService {
+
+  newsSubject = new Subject();
 
   constructor(
     private ajaxEngine: HttpClient
@@ -17,6 +20,9 @@ export class WatchitService {
     .toPromise()
   }
 
+  updateNews() {
+    this.newsSubject.next();
+  }
 }
 
 export class WatchIt {

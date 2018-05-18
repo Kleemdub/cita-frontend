@@ -6,9 +6,9 @@
         <div class="cup-image"></div>
         <div class="clash-winner-infos">
           <p>
-            {{oneWatchit.user.nickname | uppercase}}<br/>
+            {{oneWatchit?.user.nickname | uppercase}}<br/>
             WON<br/>
-            {{oneWatchit.event.title | uppercase}}
+            {{oneWatchit?.event.title | uppercase}}
           </p>
         </div>
       </div>
@@ -18,13 +18,30 @@
           <div class="sound-image"></div>
           <div class="round-winner-infos">
             <p>
-              {{oneWatchit.user.nickname | uppercase}}<br/>
+              {{oneWatchit?.user.nickname | uppercase}}<br/>
               WON<br/>
-              <span class="bigger">ROUND {{oneWatchit.roundNumber}}</span>
+              <span class="bigger">ROUND {{oneWatchit?.roundNumber}}</span>
             </p>
           </div>
       </div>
 
+  </li>
+
+  <li>
+      <div class="aside-container fullup">
+          <div class="fullup-image">
+            <p>
+              FULL<br/>UP!
+            </p>
+          </div>
+          <div class="fullup-infos">
+            <p>
+              LINEUP FOR <br/>
+              NEXT EVENT<br/>
+              <span class="bigger">IS COMPLETE</span>
+            </p>
+          </div>
+      </div>
   </li>
 </ul>
 

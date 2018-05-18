@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService, LoginCredentials } from '../api/user.service';
 import { EventService, Event, Round } from '../api/event.service';
+import { Router } from '@angular/router';
 declare const $: any;
 
 @Component({
@@ -21,18 +22,24 @@ export class EventCreateComponent implements OnInit {
   round2: Round = new Round;
   round3: Round = new Round;
 
-  scoresObj: any = {
-    selecta: this.userTruc.currentUser._id,
-    score: 0
-  }
+  // scoresObj: any = {
+  //   selecta: this.userTruc.currentUser._id,
+  //   score: 0
+  // };
+
+  scoresObj: any;
 
   constructor(
     public userTruc: UserService,
-    public apiEvent: EventService
+    public apiEvent: EventService,
+    private resTruc: Router
   ) { }
 
   ngOnInit() {
 
+    if(!this.userTruc.currentUser) {
+      this.resTruc.navigateByUrl('/login');
+    }
 
     // $(document).ready(function() {
     //   $('select').material_select();
@@ -41,6 +48,11 @@ export class EventCreateComponent implements OnInit {
   }
 
   submitCreateEvent() {
+
+    this.scoresObj = {
+      selecta: this.userTruc.currentUser._id,
+      score: 0
+    };
 
     const eventAdmin = this.userTruc.currentUser._id;
 

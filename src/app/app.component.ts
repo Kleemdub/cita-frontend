@@ -42,7 +42,7 @@ export class AppComponent {
     this.userTruc.logout()
     .then((result) => {
       console.log(result);
-      this.resTruc.navigateByUrl('/');
+      this.resTruc.navigateByUrl('/signup');
     })
     .catch((err) => {
       console.log("App logout error");

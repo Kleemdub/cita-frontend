@@ -23,6 +23,10 @@ export class UserAccountComponent implements OnInit {
 
   ngOnInit() {
 
+    if(!this.userTruc.currentUser) {
+      this.resTruc.navigateByUrl('/login');
+    }
+
     this.userTruc.check()
     .then(() => {
 

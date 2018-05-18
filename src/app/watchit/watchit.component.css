@@ -68,4 +68,43 @@
 .bigger {
     font-size:1.3rem;
 }
-    
+
+
+.fullup {
+    background: url('../../assets/images/lineup-complete-bg.png');
+    background-position-x: center;
+    background-repeat: repeat;
+    /* box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.2); */
+}
+
+.fullup-image {
+    background: url('../../assets/images/pastille-lineup.png');
+    width:150px;
+    height:150px;
+    display: block;
+    margin: 0 auto;
+    transform: rotate(20deg);
+    box-sizing: border-box;
+    padding-top:40px;
+}
+
+.fullup-image p {
+    text-align: center;
+    color:#fff;
+    font-size:2.2rem;
+    line-height: 2rem;
+    /* margin-top:20px; */
+}
+
+.fullup-infos {
+    padding-top:15px;
+}
+
+.fullup-infos p {
+    color:#fff;
+    text-align: center;
+    text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.623);
+    font-family: 'Kadwa', serif;
+    font-size:1.2rem;
+}
+

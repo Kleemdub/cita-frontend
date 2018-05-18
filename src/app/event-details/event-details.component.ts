@@ -150,6 +150,7 @@ export class EventDetailsComponent implements OnInit {
     this.apiEvent.closeRound(roundId, roundPos)
     .then(() => {
       this.apiWatchit.updateNews();
+      this.resTruc.navigateByUrl(`/`);
     })
     .catch((err) => {
       console.log('Close Round error');

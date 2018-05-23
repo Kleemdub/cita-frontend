@@ -32,6 +32,8 @@ export class ArenaComponent implements OnInit {
 
   ngOnInit() {
 
+    // $('.game-feedback-section').css({'display':'block'});
+
     this.userTruc.check()
     .then(() => {
 
@@ -85,6 +87,7 @@ export class ArenaComponent implements OnInit {
   likeClick(eventId, roundId, setId) {
     if(this.like > 0) {
       this.like--;
+      this.likeFeedback(setId);
       this.apiGame.likePut(eventId, roundId, setId, this.userGame)
       .catch((err) => {
         console.log('Like error');
@@ -96,6 +99,7 @@ export class ArenaComponent implements OnInit {
   bulletClick(eventId, roundId, setId) {
     if(this.bullet > 0) {
       this.bullet--;
+      this.bulletFeedback(setId);
       this.apiGame.bulletPut(eventId, roundId, setId, this.userGame)
       .catch((err) => {
         console.log('Bullet error');
@@ -107,12 +111,43 @@ export class ArenaComponent implements OnInit {
   bouseClick(eventId, roundId, setId) {
     if(this.bouse > 0) {
       this.bouse--;
+      this.bouseFeedback(setId);
       this.apiGame.bousePut(eventId, roundId, setId, this.userGame)
       .catch((err) => {
         console.log('Bouse error');
         console.log(err);
       });
     }
+  }
+
+  likeFeedback(setIndex) {
+    $('.set-list:eq(' + setIndex + ')').find('.game-feedback-section').css({'display':'block'}).text('+1');
+    $('.set-list:eq(' + setIndex + ')').find('.game-feedback-section').animate({'opacity':'1', 'font-size':'9rem'}, 200, function() {
+      // $(this).css({'display':'none', 'opacity':'0'});
+      $(this).animate({'opacity':'0'}, 200, function() {
+        $(this).css({'display':'none', 'font-size':'2rem'});
+      });
+    });
+  }
+
+  bulletFeedback(setIndex) {
+    $('.set-list:eq(' + setIndex + ')').find('.game-feedback-section').css({'display':'block'}).text('+3');
+    $('.set-list:eq(' + setIndex + ')').find('.game-feedback-section').animate({'opacity':'1', 'font-size':'9rem'}, 200, function() {
+      // $(this).css({'display':'none', 'opacity':'0'});
+      $(this).animate({'opacity':'0'}, 200, function() {
+        $(this).css({'display':'none', 'font-size':'2rem'});
+      });
+    });
+  }
+
+  bouseFeedback(setIndex) {
+    $('.set-list:eq(' + setIndex + ')').find('.game-feedback-section').css({'display':'block'}).text('-1');
+    $('.set-list:eq(' + setIndex + ')').find('.game-feedback-section').animate({'opacity':'1', 'font-size':'9rem'}, 200, function() {
+      // $(this).css({'display':'none', 'opacity':'0'});
+      $(this).animate({'opacity':'0'}, 200, function() {
+        $(this).css({'display':'none', 'font-size':'2rem'});
+      });
+    });
   }
 
 }

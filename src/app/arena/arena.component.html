@@ -36,7 +36,7 @@
                           <div class="brown-ribbon-d"></div>
                         </div>
                         <ul>
-                          <li *ngFor="let oneSet of oneRound.sets, let pos = index">
+                          <li *ngFor="let oneSet of oneRound.sets, let pos = index" class="set-list">
                             <div class="v-sep-20"></div>
                             <div class="v-sep-10"></div>
                             <div class="v-sep-20 tri-beige-h"></div>
@@ -45,6 +45,11 @@
                             <div class="mix-section">
                               <h5>{{oneSet.selecta.nickname}}</h5>
                               <div class="widget-title-container" [innerHTML]="setHtml[pos] | safeHtml"></div>
+
+                              <div class="game-feedback-section">
+                                <!-- <p>+1</p> -->
+                                <!-- +1 -->
+                              </div>
                             </div>
 
                             <div class="game-section">

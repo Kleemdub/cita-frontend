@@ -104,11 +104,22 @@
 /* .mix-cloud-widget {
     box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.2);
     padding:0px;
+} */
+
+.mix-section {
+    width:75%;
+    float: left;
 }
 
 .widget-title-container {
     box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.2);
-} */
+    margin:0;
+    padding:0;
+    height:118px;
+    overflow: hidden;
+    /* width:70%;
+    float: left; */
+}
 
 .rounds-display-section {
     padding:20px;
@@ -162,30 +173,38 @@
 .now-section .rounds-display-section h5 {
     /* color: #5d4037; */
     text-align: center;
-    /* font-family: 'Kadwa', serif;
-    font-weight: bold; */
+    /* font-family: 'Kadwa', serif; */
+    font-weight: bold;
+    font-size:2rem;
     /* padding-top:10px; */
-    margin-bottom:10px;
+    margin-bottom:30px;
+    /* width:70%; */
 }
 
 .game-section {
-    margin-top:15px;
+    /* margin-top:15px; */
     height: 100px;
+    float: right;
+    width:25%;
+    /* background: #0f0; */
+    padding-left:0px;
 }
+
 .game-actions {
     margin:0 auto;
-    width:240px;
+    /* width:240px; */
     height: 100px;
 }
 
 .game-actions .action {
-    float: left;
-    width:80px;
-    height: 100px;
+    /* float: left; */
+    /* width:80px; */
+    /* height: 100px; */
     /* background: rgba(0, 0, 0, 0.2);
     border-radius:10px; */
     /* margin-right:5px;
     margin-left:5px; */
+    float: right;
 }
 
 .game-actions .action p {
@@ -195,8 +214,11 @@
     border-radius:10px;
     width:40px;
     height:27px;
-    margin:0 auto;
+    /* margin:0 auto; */
     display: block;
+    float: left;
+    margin-left:6px;
+    margin-top:14px;
 }
 
 .game-actions .action button {
@@ -206,6 +228,7 @@
     margin-left:10px;
     /* margin-top:10px; */
     margin-bottom:3px;
+    float: left;
 }
 
 .game-actions .action .like {

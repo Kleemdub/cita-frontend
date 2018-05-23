@@ -25,8 +25,16 @@
                       <!-- CURRENT ROUND DISPLAYED ///////////////////////////////////////////////////////////// -->
                       <!-- //////////////////////////////////////////////////////////////////////////////////// -->
                       <div *ngIf="oneRound.status == 'displayed'">
-  
-                        <h3>Round {{oneRound.roundNumber}}</h3>
+                        <div class="round-title-section">
+                          <h3>
+                            <i class=" winner-icon material-icons deep-orange-text text-darken-4">star</i>
+                            Round {{oneRound.roundNumber}}
+                            <!-- Final Round -->
+                            <i class=" winner-icon material-icons deep-orange-text text-darken-4">star</i>
+                          </h3>
+                          <div class="brown-ribbon-g"></div>
+                          <div class="brown-ribbon-d"></div>
+                        </div>
                         <ul>
                           <li *ngFor="let oneSet of oneRound.sets, let pos = index">
                             <div class="v-sep-20"></div>

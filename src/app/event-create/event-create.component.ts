@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService, LoginCredentials } from '../api/user.service';
 import { EventService, Event, Round } from '../api/event.service';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 declare const $: any;
 
 @Component({
@@ -104,7 +104,8 @@ export class EventCreateComponent implements OnInit {
     
     this.apiEvent.createNewEvent(this.newEvent)
     .then((response) => {
-      console.log(response);
+      // console.log(response);
+      this.resTruc.navigateByUrl(`/`);
     })
     .catch((err) => {
       console.log('Event creation error');

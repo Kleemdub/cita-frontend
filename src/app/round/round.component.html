@@ -20,7 +20,18 @@
       <ul>
           <li *ngFor="let oneRound of event?.rounds, let roundPos = index">
               <div *ngIf="oneRound._id == roundId">
-                  <h3>Round {{oneRound.roundNumber}}</h3>
+                  <!-- <h3>Round {{oneRound.roundNumber}}</h3> -->
+
+                  <div class="round-title-section">
+                    <h3>
+                      <i class=" winner-icon material-icons deep-orange-text text-darken-4">star</i>
+                      Round {{oneRound.roundNumber}}
+                      <!-- Final Round -->
+                      <i class=" winner-icon material-icons deep-orange-text text-darken-4">star</i>
+                    </h3>
+                    <div class="brown-ribbon-g"></div>
+                    <div class="brown-ribbon-d"></div>
+                  </div>
 
                   <div>
                     <div class="v-sep-20"></div>
@@ -58,7 +69,16 @@
                           <div class="widget-title-container" [innerHTML]="setHtml[pos] | safeHtml"></div>
                           <div class="game-section">
                             <p>
-                              {{oneSet.description}}
+                              <!-- {{oneSet.description}} -->
+                              <b>Observers All Stars</b> - Razor blade dub <em>(7" Observers)</em><br/>
+                              <b>W.D. Dale</b> - Detention center <em>(7" Plymouth Hill)</em><br/>
+                              <b>Jah Sonny</b> - Natty cool <em>(7" Earthquake)</em><br/>
+                              <b>Melford Jackson</b> - Southern Africa <em>(7" Afrik)</em><br/>
+                              <b>The Ovations</b> - Too much war <em>(7" LGM international records)</em><br/>
+                              <b>Family Man & The Rebel Arms</b> - Eastern Memphis <em>(7" Cobra / Dubstore)</em><br/>
+                              <b>Freddie McKay</b> - Your cup is full + Dub <em>(7" Sunpower)</em><br/>
+                              <b>Tony Ford</b> - Money make the mare gallop <em>(7" Music Industry)</em><br/>
+                              <b>Devon Lyons</b> - Shadow after dark <em>(7" Weed Beat)</em>
                             </p>
                           </div>
 

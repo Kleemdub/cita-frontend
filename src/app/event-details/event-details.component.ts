@@ -123,7 +123,8 @@ export class EventDetailsComponent implements OnInit {
     this.apiEvent.joinIn(this.eventId, this.joinInSelecta)
     .then((result) => {
       console.log(result);
-      this.resTruc.navigateByUrl(`/event/${this.eventId}`);
+      // this.resTruc.navigateByUrl(`/event/${this.eventId}`);
+      this.resTruc.navigateByUrl(`/user/${this.userTruc.currentUser._id}`);
     })
     .catch((err) => {
       console.log('Phone delete error');

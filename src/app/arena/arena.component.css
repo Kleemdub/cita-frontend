@@ -114,13 +114,48 @@
     padding:20px;
 }
 
+.now-section .rounds-display-section .round-title-section {
+    background: url('../../assets/images/brown-ribbon.png');
+    position: relative;
+    display: block;
+    margin: 0 auto;
+    height: 60px;
+    width:300px;
+}
+
+.brown-ribbon-g {
+    position: absolute;
+    height: 60px;
+    width:40px;
+    top:0px;
+    left:-40px;
+    background: url('../../assets/images/brown-ribbon-g.png');
+}
+
+.brown-ribbon-d {
+    position: absolute;
+    height: 60px;
+    width:40px;
+    top:0px;
+    right:-40px;
+    background: url('../../assets/images/brown-ribbon-d.png');
+}
+
 .now-section .rounds-display-section h3 {
-    color: #5d4037;
+    /* background: url('../../assets/images/brown-ribbon.png'); */
+    /* color: #5d4037; */
+    color: #fff;
+    height: 60px;
+    /* width:300px; */
+    font-size:2.3rem;
+    /* position: relative; */
+    /* display: block; */
+    /* margin: 0 auto; */
     text-align: center;
     font-family: 'Kadwa', serif;
-    font-weight: bold;
-    text-shadow: 2px 2px 0px #fff;
-    padding-top:10px;
+    /* font-weight: bold; */
+    /* text-shadow: 2px 2px 0px #fff; */
+    padding-top:13px;
     /* margin-bottom:20px; */
 }
 
